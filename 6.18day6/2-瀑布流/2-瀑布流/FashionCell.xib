@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FashionCell">
+            <rect key="frame" x="0.0" y="0.0" width="216" height="346"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="216" height="346"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmQ-B7-6ch">
+                        <rect key="frame" x="0.0" y="300" width="216" height="46"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="46" id="UTq-X7-lG5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H2p-is-5vq">
+                        <rect key="frame" x="0.0" y="0.0" width="216" height="274"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="274" id="Gvs-rj-QWe"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="H2p-is-5vq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0j8-jr-9jQ"/>
+                <constraint firstItem="SmQ-B7-6ch" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Pw5-pE-pJY"/>
+                <constraint firstItem="H2p-is-5vq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="U7t-RE-ryi"/>
+                <constraint firstAttribute="trailing" secondItem="H2p-is-5vq" secondAttribute="trailing" id="gAU-s3-3kw"/>
+                <constraint firstAttribute="bottom" secondItem="SmQ-B7-6ch" secondAttribute="bottom" id="kIh-cv-R9Z"/>
+                <constraint firstAttribute="trailing" secondItem="SmQ-B7-6ch" secondAttribute="trailing" id="pE8-lT-fng"/>
+            </constraints>
+            <size key="customSize" width="216" height="346"/>
+            <connections>
+                <outlet property="desL" destination="SmQ-B7-6ch" id="uAW-Nx-tK4"/>
+                <outlet property="imgHeight" destination="Gvs-rj-QWe" id="Jeu-8l-MxQ"/>
+                <outlet property="imgView" destination="H2p-is-5vq" id="X42-IF-dwV"/>
+            </connections>
+            <point key="canvasLocation" x="242" y="318"/>
+        </collectionViewCell>
+    </objects>
+</document>
