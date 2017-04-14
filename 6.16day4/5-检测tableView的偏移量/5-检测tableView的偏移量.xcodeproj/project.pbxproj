@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0467679F1D12950B008307C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0467679E1D12950B008307C4 /* main.m */; };
+		046767A21D12950B008307C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046767A11D12950B008307C4 /* AppDelegate.m */; };
+		046767A51D12950B008307C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046767A41D12950B008307C4 /* ViewController.m */; };
+		046767A81D12950C008307C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046767A61D12950C008307C4 /* Main.storyboard */; };
+		046767AA1D12950C008307C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 046767A91D12950C008307C4 /* Images.xcassets */; };
+		046767AD1D12950C008307C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046767AB1D12950C008307C4 /* LaunchScreen.xib */; };
+		046767B91D12950C008307C4 /* ____tableView____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046767B81D12950C008307C4 /* ____tableView____Tests.m */; };
+		046767C41D129AF5008307C4 /* HeadRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046767C31D129AF5008307C4 /* HeadRefreshView.m */; };
+		046767C61D129B3F008307C4 /* HeadRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046767C51D129B3F008307C4 /* HeadRefreshView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		046767B31D12950C008307C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 046767911D12950B008307C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 046767981D12950B008307C4;
+			remoteInfo = "5-检测tableView的偏移量";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		046767991D12950B008307C4 /* 5-检测tableView的偏移量.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "5-检测tableView的偏移量.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0467679D1D12950B008307C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0467679E1D12950B008307C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		046767A01D12950B008307C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		046767A11D12950B008307C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		046767A31D12950B008307C4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		046767A41D12950B008307C4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		046767A71D12950C008307C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		046767A91D12950C008307C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		046767AC1D12950C008307C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		046767B21D12950C008307C4 /* 5-检测tableView的偏移量Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "5-检测tableView的偏移量Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		046767B71D12950C008307C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046767B81D12950C008307C4 /* ____tableView____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____tableView____Tests.m"; sourceTree = "<group>"; };
+		046767C21D129AF5008307C4 /* HeadRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadRefreshView.h; sourceTree = "<group>"; };
+		046767C31D129AF5008307C4 /* HeadRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadRefreshView.m; sourceTree = "<group>"; };
+		046767C51D129B3F008307C4 /* HeadRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadRefreshView.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		046767961D12950B008307C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046767AF1D12950C008307C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		046767901D12950B008307C4 = {
+			isa = PBXGroup;
+			children = (
+				0467679B1D12950B008307C4 /* 5-检测tableView的偏移量 */,
+				046767B51D12950C008307C4 /* 5-检测tableView的偏移量Tests */,
+				0467679A1D12950B008307C4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0467679A1D12950B008307C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				046767991D12950B008307C4 /* 5-检测tableView的偏移量.app */,
+				046767B21D12950C008307C4 /* 5-检测tableView的偏移量Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0467679B1D12950B008307C4 /* 5-检测tableView的偏移量 */ = {
+			isa = PBXGroup;
+			children = (
+				046767A01D12950B008307C4 /* AppDelegate.h */,
+				046767A11D12950B008307C4 /* AppDelegate.m */,
+				046767A31D12950B008307C4 /* ViewController.h */,
+				046767A41D12950B008307C4 /* ViewController.m */,
+				046767C21D129AF5008307C4 /* HeadRefreshView.h */,
+				046767C31D129AF5008307C4 /* HeadRefreshView.m */,
+				046767C51D129B3F008307C4 /* HeadRefreshView.xib */,
+				046767A61D12950C008307C4 /* Main.storyboard */,
+				046767A91D12950C008307C4 /* Images.xcassets */,
+				046767AB1D12950C008307C4 /* LaunchScreen.xib */,
+				0467679C1D12950B008307C4 /* Supporting Files */,
+			);
+			path = "5-检测tableView的偏移量";
+			sourceTree = "<group>";
+		};
+		0467679C1D12950B008307C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0467679D1D12950B008307C4 /* Info.plist */,
+				0467679E1D12950B008307C4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		046767B51D12950C008307C4 /* 5-检测tableView的偏移量Tests */ = {
+			isa = PBXGroup;
+			children = (
+				046767B81D12950C008307C4 /* ____tableView____Tests.m */,
+				046767B61D12950C008307C4 /* Supporting Files */,
+			);
+			path = "5-检测tableView的偏移量Tests";
+			sourceTree = "<group>";
+		};
+		046767B61D12950C008307C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				046767B71D12950C008307C4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		046767981D12950B008307C4 /* 5-检测tableView的偏移量 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 046767BC1D12950C008307C4 /* Build configuration list for PBXNativeTarget "5-检测tableView的偏移量" */;
+			buildPhases = (
+				046767951D12950B008307C4 /* Sources */,
+				046767961D12950B008307C4 /* Frameworks */,
+				046767971D12950B008307C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "5-检测tableView的偏移量";
+			productName = "5-检测tableView的偏移量";
+			productReference = 046767991D12950B008307C4 /* 5-检测tableView的偏移量.app */;
+			productType = "com.apple.product-type.application";
+		};
+		046767B11D12950C008307C4 /* 5-检测tableView的偏移量Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 046767BF1D12950C008307C4 /* Build configuration list for PBXNativeTarget "5-检测tableView的偏移量Tests" */;
+			buildPhases = (
+				046767AE1D12950C008307C4 /* Sources */,
+				046767AF1D12950C008307C4 /* Frameworks */,
+				046767B01D12950C008307C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				046767B41D12950C008307C4 /* PBXTargetDependency */,
+			);
+			name = "5-检测tableView的偏移量Tests";
+			productName = "5-检测tableView的偏移量Tests";
+			productReference = 046767B21D12950C008307C4 /* 5-检测tableView的偏移量Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		046767911D12950B008307C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = mac;
+				TargetAttributes = {
+					046767981D12950B008307C4 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					046767B11D12950C008307C4 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 046767981D12950B008307C4;
+					};
+				};
+			};
+			buildConfigurationList = 046767941D12950B008307C4 /* Build configuration list for PBXProject "5-检测tableView的偏移量" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 046767901D12950B008307C4;
+			productRefGroup = 0467679A1D12950B008307C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				046767981D12950B008307C4 /* 5-检测tableView的偏移量 */,
+				046767B11D12950C008307C4 /* 5-检测tableView的偏移量Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		046767971D12950B008307C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046767C61D129B3F008307C4 /* HeadRefreshView.xib in Resources */,
+				046767A81D12950C008307C4 /* Main.storyboard in Resources */,
+				046767AD1D12950C008307C4 /* LaunchScreen.xib in Resources */,
+				046767AA1D12950C008307C4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046767B01D12950C008307C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		046767951D12950B008307C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046767C41D129AF5008307C4 /* HeadRefreshView.m in Sources */,
+				046767A51D12950B008307C4 /* ViewController.m in Sources */,
+				046767A21D12950B008307C4 /* AppDelegate.m in Sources */,
+				0467679F1D12950B008307C4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		046767AE1D12950C008307C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046767B91D12950C008307C4 /* ____tableView____Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		046767B41D12950C008307C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 046767981D12950B008307C4 /* 5-检测tableView的偏移量 */;
+			targetProxy = 046767B31D12950C008307C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		046767A61D12950C008307C4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				046767A71D12950C008307C4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		046767AB1D12950C008307C4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				046767AC1D12950C008307C4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		046767BA1D12950C008307C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		046767BB1D12950C008307C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		046767BD1D12950C008307C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "5-检测tableView的偏移量/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		046767BE1D12950C008307C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "5-检测tableView的偏移量/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		046767C01D12950C008307C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "5-检测tableView的偏移量Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/5-检测tableView的偏移量.app/5-检测tableView的偏移量";
+			};
+			name = Debug;
+		};
+		046767C11D12950C008307C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "5-检测tableView的偏移量Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/5-检测tableView的偏移量.app/5-检测tableView的偏移量";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		046767941D12950B008307C4 /* Build configuration list for PBXProject "5-检测tableView的偏移量" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046767BA1D12950C008307C4 /* Debug */,
+				046767BB1D12950C008307C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		046767BC1D12950C008307C4 /* Build configuration list for PBXNativeTarget "5-检测tableView的偏移量" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046767BD1D12950C008307C4 /* Debug */,
+				046767BE1D12950C008307C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		046767BF1D12950C008307C4 /* Build configuration list for PBXNativeTarget "5-检测tableView的偏移量Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				046767C01D12950C008307C4 /* Debug */,
+				046767C11D12950C008307C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 046767911D12950B008307C4 /* Project object */;
+}
