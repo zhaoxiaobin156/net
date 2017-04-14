@@ -1,0 +1,515 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04F975E11D1A215000CDB4D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F975E01D1A215000CDB4D0 /* main.m */; };
+		04F975E41D1A215000CDB4D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F975E31D1A215000CDB4D0 /* AppDelegate.m */; };
+		04F975E71D1A215000CDB4D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F975E61D1A215000CDB4D0 /* ViewController.m */; };
+		04F975EA1D1A215000CDB4D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F975E81D1A215000CDB4D0 /* Main.storyboard */; };
+		04F975EC1D1A215000CDB4D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F975EB1D1A215000CDB4D0 /* Images.xcassets */; };
+		04F975EF1D1A215000CDB4D0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F975ED1D1A215000CDB4D0 /* LaunchScreen.xib */; };
+		04F975FB1D1A215000CDB4D0 /* __AudioPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F975FA1D1A215000CDB4D0 /* __AudioPlayerTests.m */; };
+		04F9760B1D1A223900CDB4D0 /* 作曲家.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 04F976051D1A223900CDB4D0 /* 作曲家.lrc */; };
+		04F9760C1D1A223900CDB4D0 /* 作曲家.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04F976061D1A223900CDB4D0 /* 作曲家.mp3 */; };
+		04F9760D1D1A223900CDB4D0 /* 喜剧之王.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 04F976071D1A223900CDB4D0 /* 喜剧之王.lrc */; };
+		04F9760E1D1A223900CDB4D0 /* 喜剧之王.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04F976081D1A223900CDB4D0 /* 喜剧之王.mp3 */; };
+		04F9760F1D1A223900CDB4D0 /* 李白.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 04F976091D1A223900CDB4D0 /* 李白.lrc */; };
+		04F976101D1A223900CDB4D0 /* 李白.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04F9760A1D1A223900CDB4D0 /* 李白.mp3 */; };
+		04F976131D1A3C1100CDB4D0 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F976121D1A3C1100CDB4D0 /* TableViewCell.m */; };
+		04F976161D1A3C6A00CDB4D0 /* LRCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F976151D1A3C6A00CDB4D0 /* LRCManager.m */; };
+		04F976181D1A68CE00CDB4D0 /* 李白.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04F976171D1A68CE00CDB4D0 /* 李白.jpg */; };
+		04F9761B1D1A6AC000CDB4D0 /* 喜剧之王.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04F976191D1A6AC000CDB4D0 /* 喜剧之王.jpg */; };
+		04F9761C1D1A6AC000CDB4D0 /* 作曲家.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04F9761A1D1A6AC000CDB4D0 /* 作曲家.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04F975F51D1A215000CDB4D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04F975D31D1A215000CDB4D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04F975DA1D1A215000CDB4D0;
+			remoteInfo = "1-AudioPlayer";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04F975DB1D1A215000CDB4D0 /* 1-AudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "1-AudioPlayer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F975DF1D1A215000CDB4D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F975E01D1A215000CDB4D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04F975E21D1A215000CDB4D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04F975E31D1A215000CDB4D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04F975E51D1A215000CDB4D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		04F975E61D1A215000CDB4D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		04F975E91D1A215000CDB4D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04F975EB1D1A215000CDB4D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		04F975EE1D1A215000CDB4D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		04F975F41D1A215000CDB4D0 /* 1-AudioPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "1-AudioPlayerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04F975F91D1A215000CDB4D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04F975FA1D1A215000CDB4D0 /* __AudioPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __AudioPlayerTests.m; sourceTree = "<group>"; };
+		04F976051D1A223900CDB4D0 /* 作曲家.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "作曲家.lrc"; sourceTree = "<group>"; };
+		04F976061D1A223900CDB4D0 /* 作曲家.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "作曲家.mp3"; sourceTree = "<group>"; };
+		04F976071D1A223900CDB4D0 /* 喜剧之王.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "喜剧之王.lrc"; sourceTree = "<group>"; };
+		04F976081D1A223900CDB4D0 /* 喜剧之王.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "喜剧之王.mp3"; sourceTree = "<group>"; };
+		04F976091D1A223900CDB4D0 /* 李白.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "李白.lrc"; sourceTree = "<group>"; };
+		04F9760A1D1A223900CDB4D0 /* 李白.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "李白.mp3"; sourceTree = "<group>"; };
+		04F976111D1A3C1100CDB4D0 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		04F976121D1A3C1100CDB4D0 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		04F976141D1A3C6A00CDB4D0 /* LRCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRCManager.h; sourceTree = "<group>"; };
+		04F976151D1A3C6A00CDB4D0 /* LRCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRCManager.m; sourceTree = "<group>"; };
+		04F976171D1A68CE00CDB4D0 /* 李白.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "李白.jpg"; path = "../李白.jpg"; sourceTree = "<group>"; };
+		04F976191D1A6AC000CDB4D0 /* 喜剧之王.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "喜剧之王.jpg"; path = "../喜剧之王.jpg"; sourceTree = "<group>"; };
+		04F9761A1D1A6AC000CDB4D0 /* 作曲家.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "作曲家.jpg"; path = "../作曲家.jpg"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04F975D81D1A215000CDB4D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F975F11D1A215000CDB4D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04F975D21D1A215000CDB4D0 = {
+			isa = PBXGroup;
+			children = (
+				04F975DD1D1A215000CDB4D0 /* 1-AudioPlayer */,
+				04F975F71D1A215000CDB4D0 /* 1-AudioPlayerTests */,
+				04F975DC1D1A215000CDB4D0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04F975DC1D1A215000CDB4D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04F975DB1D1A215000CDB4D0 /* 1-AudioPlayer.app */,
+				04F975F41D1A215000CDB4D0 /* 1-AudioPlayerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04F975DD1D1A215000CDB4D0 /* 1-AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				04F976041D1A223900CDB4D0 /* 歌曲 */,
+				04F975E21D1A215000CDB4D0 /* AppDelegate.h */,
+				04F975E31D1A215000CDB4D0 /* AppDelegate.m */,
+				04F9761D1D1A700800CDB4D0 /* 歌词解析类 */,
+				04F9761E1D1A701200CDB4D0 /* View */,
+				04F9761F1D1A701900CDB4D0 /* Controller */,
+				04F975E81D1A215000CDB4D0 /* Main.storyboard */,
+				04F975EB1D1A215000CDB4D0 /* Images.xcassets */,
+				04F975ED1D1A215000CDB4D0 /* LaunchScreen.xib */,
+				04F975DE1D1A215000CDB4D0 /* Supporting Files */,
+			);
+			path = "1-AudioPlayer";
+			sourceTree = "<group>";
+		};
+		04F975DE1D1A215000CDB4D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04F975DF1D1A215000CDB4D0 /* Info.plist */,
+				04F975E01D1A215000CDB4D0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04F975F71D1A215000CDB4D0 /* 1-AudioPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				04F975FA1D1A215000CDB4D0 /* __AudioPlayerTests.m */,
+				04F975F81D1A215000CDB4D0 /* Supporting Files */,
+			);
+			path = "1-AudioPlayerTests";
+			sourceTree = "<group>";
+		};
+		04F975F81D1A215000CDB4D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04F975F91D1A215000CDB4D0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04F976041D1A223900CDB4D0 /* 歌曲 */ = {
+			isa = PBXGroup;
+			children = (
+				04F976051D1A223900CDB4D0 /* 作曲家.lrc */,
+				04F976061D1A223900CDB4D0 /* 作曲家.mp3 */,
+				04F9761A1D1A6AC000CDB4D0 /* 作曲家.jpg */,
+				04F976071D1A223900CDB4D0 /* 喜剧之王.lrc */,
+				04F976081D1A223900CDB4D0 /* 喜剧之王.mp3 */,
+				04F976191D1A6AC000CDB4D0 /* 喜剧之王.jpg */,
+				04F976091D1A223900CDB4D0 /* 李白.lrc */,
+				04F9760A1D1A223900CDB4D0 /* 李白.mp3 */,
+				04F976171D1A68CE00CDB4D0 /* 李白.jpg */,
+			);
+			path = "歌曲";
+			sourceTree = "<group>";
+		};
+		04F9761D1D1A700800CDB4D0 /* 歌词解析类 */ = {
+			isa = PBXGroup;
+			children = (
+				04F976141D1A3C6A00CDB4D0 /* LRCManager.h */,
+				04F976151D1A3C6A00CDB4D0 /* LRCManager.m */,
+			);
+			name = "歌词解析类";
+			sourceTree = "<group>";
+		};
+		04F9761E1D1A701200CDB4D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04F976111D1A3C1100CDB4D0 /* TableViewCell.h */,
+				04F976121D1A3C1100CDB4D0 /* TableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		04F9761F1D1A701900CDB4D0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04F975E51D1A215000CDB4D0 /* ViewController.h */,
+				04F975E61D1A215000CDB4D0 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04F975DA1D1A215000CDB4D0 /* 1-AudioPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F975FE1D1A215000CDB4D0 /* Build configuration list for PBXNativeTarget "1-AudioPlayer" */;
+			buildPhases = (
+				04F975D71D1A215000CDB4D0 /* Sources */,
+				04F975D81D1A215000CDB4D0 /* Frameworks */,
+				04F975D91D1A215000CDB4D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "1-AudioPlayer";
+			productName = "1-AudioPlayer";
+			productReference = 04F975DB1D1A215000CDB4D0 /* 1-AudioPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04F975F31D1A215000CDB4D0 /* 1-AudioPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04F976011D1A215000CDB4D0 /* Build configuration list for PBXNativeTarget "1-AudioPlayerTests" */;
+			buildPhases = (
+				04F975F01D1A215000CDB4D0 /* Sources */,
+				04F975F11D1A215000CDB4D0 /* Frameworks */,
+				04F975F21D1A215000CDB4D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04F975F61D1A215000CDB4D0 /* PBXTargetDependency */,
+			);
+			name = "1-AudioPlayerTests";
+			productName = "1-AudioPlayerTests";
+			productReference = 04F975F41D1A215000CDB4D0 /* 1-AudioPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04F975D31D1A215000CDB4D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = mac;
+				TargetAttributes = {
+					04F975DA1D1A215000CDB4D0 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					04F975F31D1A215000CDB4D0 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 04F975DA1D1A215000CDB4D0;
+					};
+				};
+			};
+			buildConfigurationList = 04F975D61D1A215000CDB4D0 /* Build configuration list for PBXProject "1-AudioPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04F975D21D1A215000CDB4D0;
+			productRefGroup = 04F975DC1D1A215000CDB4D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04F975DA1D1A215000CDB4D0 /* 1-AudioPlayer */,
+				04F975F31D1A215000CDB4D0 /* 1-AudioPlayerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04F975D91D1A215000CDB4D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F9760F1D1A223900CDB4D0 /* 李白.lrc in Resources */,
+				04F9760D1D1A223900CDB4D0 /* 喜剧之王.lrc in Resources */,
+				04F976181D1A68CE00CDB4D0 /* 李白.jpg in Resources */,
+				04F975EA1D1A215000CDB4D0 /* Main.storyboard in Resources */,
+				04F9760C1D1A223900CDB4D0 /* 作曲家.mp3 in Resources */,
+				04F976101D1A223900CDB4D0 /* 李白.mp3 in Resources */,
+				04F9761C1D1A6AC000CDB4D0 /* 作曲家.jpg in Resources */,
+				04F975EF1D1A215000CDB4D0 /* LaunchScreen.xib in Resources */,
+				04F9760B1D1A223900CDB4D0 /* 作曲家.lrc in Resources */,
+				04F9761B1D1A6AC000CDB4D0 /* 喜剧之王.jpg in Resources */,
+				04F975EC1D1A215000CDB4D0 /* Images.xcassets in Resources */,
+				04F9760E1D1A223900CDB4D0 /* 喜剧之王.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F975F21D1A215000CDB4D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04F975D71D1A215000CDB4D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F975E71D1A215000CDB4D0 /* ViewController.m in Sources */,
+				04F976131D1A3C1100CDB4D0 /* TableViewCell.m in Sources */,
+				04F976161D1A3C6A00CDB4D0 /* LRCManager.m in Sources */,
+				04F975E41D1A215000CDB4D0 /* AppDelegate.m in Sources */,
+				04F975E11D1A215000CDB4D0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04F975F01D1A215000CDB4D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04F975FB1D1A215000CDB4D0 /* __AudioPlayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04F975F61D1A215000CDB4D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04F975DA1D1A215000CDB4D0 /* 1-AudioPlayer */;
+			targetProxy = 04F975F51D1A215000CDB4D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04F975E81D1A215000CDB4D0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F975E91D1A215000CDB4D0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04F975ED1D1A215000CDB4D0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F975EE1D1A215000CDB4D0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04F975FC1D1A215000CDB4D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04F975FD1D1A215000CDB4D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04F975FF1D1A215000CDB4D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "1-AudioPlayer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		04F976001D1A215000CDB4D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "1-AudioPlayer/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		04F976021D1A215000CDB4D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "1-AudioPlayerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/1-AudioPlayer.app/1-AudioPlayer";
+			};
+			name = Debug;
+		};
+		04F976031D1A215000CDB4D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "1-AudioPlayerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/1-AudioPlayer.app/1-AudioPlayer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04F975D61D1A215000CDB4D0 /* Build configuration list for PBXProject "1-AudioPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F975FC1D1A215000CDB4D0 /* Debug */,
+				04F975FD1D1A215000CDB4D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04F975FE1D1A215000CDB4D0 /* Build configuration list for PBXNativeTarget "1-AudioPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F975FF1D1A215000CDB4D0 /* Debug */,
+				04F976001D1A215000CDB4D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04F976011D1A215000CDB4D0 /* Build configuration list for PBXNativeTarget "1-AudioPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04F976021D1A215000CDB4D0 /* Debug */,
+				04F976031D1A215000CDB4D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04F975D31D1A215000CDB4D0 /* Project object */;
+}
