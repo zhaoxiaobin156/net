@@ -1,0 +1,230 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<TITLE>Die Daten die HTTPScoop anzeigt verstehen</TITLE>
+	<META NAME="DESCRIPTION" CONTENT="Die Daten die HTTPScoop anzeigt verstehen">
+	<META NAME="KEYWORDS" CONTENT="zusammenfassung, kopfzeilen, tcp, text, hex, post">
+	<LINK REL="stylesheet" TYPE="text/css" HREF="helpStyle.css">
+</head>
+
+<body>
+		<table width="100%" cellpadding="0" cellspacing="0" class="navSection">
+			<tr>
+				<td style="text-align: left"><a href="index.html">Inhaltsverzeichnis</a></td>
+			</tr>
+		</table>
+	<h2>Die Daten die HTTPScoop anzeigt verstehen</h2>
+	<p>
+		HTTPScoop bietet mehrere Ansichten für aufgezeichnete HTTP-Kommunikation in den verschiedenen Registern des Fensters <i>HTTP-Anfrage-Details</i>. Dieses Fenster öffnet sich, wenn sie auf eine Anfrage doppelklicken. 
+		<ul>
+			<li><a href="#summary">Zusammenfassung</a></li>
+			<li><a href="#headers">Kopfzeilen</a></li>
+			<li><a href="#post">POST (Hex)</a></li>
+			<li><a href="#responseText">Antwort (Text)</a></li>
+			<li><a href="#responseHex">Antwort (Hex)</a></li>
+			<li><a href="#responseImage">Bild</a></li>
+			<li><a href="#tcp">TCP/IP</a></li>
+		</ul>
+	</p>
+
+<a name="summary"/>
+<center>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Zusammenfassung</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_summary_small.png" width="219" height="105"/>
+							</p>
+						</td>
+						<td>
+							<p>
+							Die Zusammenfassung zeigt allgemeine Informationen der Anfrage und den aktuellen Status wie die angefragte URL, die Antwortzeile, den Content-Type und die Größe der Anfrage/Antwort.
+							<p>
+							Die Anfrage-Parameter werden extrahiert (bei GET-Anfragen aus der URL; bei POST-Anfragen mit dem Content-Type <code>application/x-www-form-urlencoded</code> aus den POST-Daten) um eine gute Übersicht zu gewährleisten.
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="headers"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Kopfzeilen</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_headers_small.png" width="219" height="104"/>
+							</p>
+						</td>
+						<td>
+							<p>
+								Jede Anfrage und jede Antwort kann Kopfzeilen enthalten. Anfrage-Kopfzeilen von Webbrowsern enthalten typischerweise Informationen über Sprachpräferenzen, Browsertyp, akzeptierte Dateitypen usw. Antwort-Kopfzeilen von einem Server enthalten Informationen über die Größe und Art der zurückgegebenen Inhalte sowie Informationen darüber wie (und ob) die Inhalte zwischengespeichert werden dürfen.
+							</p>
+							<p>
+								Ein weiterer wichtiger Anwendungsfall von Kopfzeilen sind Cookies. Cookies erlauben der Website anzufragen, ihr innerhalb des Browsers Daten zuzuordnen und diese bei zukünftigen Anfragen zu übermitteln. Dies erlaubt z.B. das Speichern von Benutzereinstellungen, die Analyse von Surfgewohnheiten etc. Cookies können außerdem verwendet werden um eine Sitzung zu verfolgen, so dass der Server verschiedene Anfragen die vom selben Browser ausgehen einander zuordnen kann. Halten Sie Ausschau nach <code>Cookie</code>-Anfragekopfzeilen sowie <code>Set-cookie</code>-Antwortkopfzeilen.
+							</p>
+							<p>
+								Weitere Informationen über Cookies erhalten Sie in der <a href="http://www.faqs.org/rfcs/rfc2965.html">RFC 2965 - Mechanismen zur Statusverwaltung bei HTTP (englisch)</a>, allgemeine Informationen über Anfrage-Kopfzeilen erhalten Sie in der <a href="http://www.w3.org/Protocols/rfc2616/rfc2616.html">HTTP-Spezifikation (englisch)</a>.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="post"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>POST (Hex)</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_post_small.png" width="219" height="105"/>
+							</p>
+						</td>
+						<td valign="top">
+							<p>
+							Der Anfragekörper einer POST-Anfrage kann hier als Hexdump betrachtet werden. Bitte beachten Sie, dass es bei der Anzeige von großen Anfragen zu Verzögerungen kommen kann.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="responseText"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Antwort (Text)</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_response_text_small.png" width="219" height="105"/>
+							</p>
+						</td>
+						<td>
+							<p>
+							Zeigt den Antwortkörper als Klartext an (entpackt - falls gzip- oder deflate-komprimiert - sowie zusammengesetzt - falls die Antwort aus mehreren Teilen bestand). 
+							</p>
+							<p>
+							Das zerstückelte Übertragen (Chunking) von Daten wird oft beim Übertragen von Inhalten verwendet, deren Länge vorher nicht bekannt ist. Anstatt eine fixe Länge für den Inhalt anzugeben, sendet der Server mehrere Stücke mit Daten vor denen jeweils eine Längenbeschreibung steht. Das Ende der Antwort wird durch ein Teilstück mit der Länge 0 signalisiert. Da HTTPScoop die Teile automatisch aneinanderreiht bevor der Antworttext angezeigt wird, ist nicht ersichtlich ob Chunking eingesetzt wurde. Dies kann aber in der TCP/IP-Ansicht  beobachtet werden.
+							</p>
+							<p>
+							Für die Content-Types text/html und text/xml wird eine einfache Syntayhervorhebung verwendet, welche Elemente, Attribute, Attributwerte und Kommentare hervorhebt.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="responseHex"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Antwort (Hex)</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_response_hex_small.png" width="219" height="104"/>
+							</p>
+						</td>
+						<td valign="top">
+							<p>
+							Der Körper einer Antwort kann hier als Hexdump betrachtet werden. Bitte beachten Sie, dass es bei der Anzeige von großen Antworten zu Verzögerungen kommen kann. Wie bei der Ansicht der Antwort als Text, werden die Daten auch hier (wo anwendbar) nach der Dekomprimierung und nach dem Zusammensetzen angezeigt.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="responseImage"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Bild</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_response_image_small.png" width="219" height="108"/>
+							</p>
+						</td>
+						<td valign="top">
+							<p>
+							Das Register <code>Bild</code> zeigt zurückgegebene Bilder an (skaliert, falls sie zu groß sind). Bitte beachten Sie, dass die <code>Content-Type</code>-Kopfzeile korrekt gesetzt sein muss, damit ein Bild angezeigt wird.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="tcp"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>TCP/IP</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_tcp_small.png" width="219" height="104"/>
+							</p>
+						</td>
+						<td>
+							<p>
+							Diese Ansicht ermöglicht Ihnen die komplette Aktivität der TCP-Verbindung einzusehen, über die die Anfrage gemacht wurde. Dies erlaubt Zugriff auf die Rohdaten die über die Leitung gesendet wurden, vor Dekomprimierung, Zusammensetzen mehrerer Chunks, etc. Dies kann nützlich sein um Protokollfehler von HTTP-Clients/-Servern zu finden.
+							</p>
+							<p>
+							Sequenz- und Quittierungsnummern werden zusammen mit dem Status der TCP-Flags SYN, ACK, RST und FIN angezeit. Die Paketkörper werden als Hexdump dargestellt.
+							</p>
+							<p>
+							Die HTTP-Spezifikation erlaubt das Senden von mehreren Anfragen über eine TCP-Verbindung ohne auf eine Antwort zu warten. Aus diesem Grund könnte der erste TCP-Anfrage- bzw. Antwortkörper von einer anderen als der gewählten HTTP-Anfrage sein. 
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+</center>
+</body>
+
+</html>

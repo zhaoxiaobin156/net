@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<TITLE>Contrôler ce qui est capturé grâce aux Préférences</TITLE>	
+  <META HTTP-EQUIV="content-type" CONTENT="text-html; charset=utf-8">	
+	<LINK REL="stylesheet" TYPE="text/css" HREF="helpStyle.css">
+</head>
+
+<body>
+		<table width="100%" cellpadding="0" cellspacing="0" class="navSection">
+			<tr>
+				<td style="text-align: left"><a href="index.html">Home</a></td>
+			</tr>
+		</table>
+	<h2>Contrôler ce qui est capturé grâce aux <i>préférences</i></h2>
+	<table width="100%">
+			<tr>
+				<td valign="top">
+					<p>
+						<img src="img/screenshot_settings_small.png" width="219" height="158"/>
+					</p>
+				</td>
+				<td valign="top">
+					<p>
+					L'écran de préférences (accessible depuis le menu <i>HTTPScoop</i> quand aucune capture n'est en cours) vous permet de décrire quel type de trafic vous souhaitez capturer. Ces paramètres sont enregistrés dans vos préférences utilisateurs, donc soyez conscient qu'ils sont rechargés à chaque lancement de l'application.						
+					</p>
+					<p>
+						Paramètres :
+						<ul>
+							<li><a href="#promisc">Mode promiscueux</a></li>
+							<li><a href="#hosts">Restreindre aux hôtes</a></li>
+							<li><a href="#ports">Restreindre aux ports</a></li>
+							<li><a href="#limit">Ne pas limiter la taille de la sortie</a></li>
+						</ul>
+
+					</p>
+				</td>
+			<tr>
+	</table>
+
+	<center>
+		<a name="promisc"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>Mode promiscueux</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+					Le mode promiscueux vous permet de capturer les conversations HTTP qui n'impliquent pas la machine sur laquelle HTTPScoop est lancé. Celà peut être utile quand ni le client, ni le serveur n'utilisent OS X. Cela peut aussi être pratique pour tester le comportement d'un serveur face à différent clients.
+					</p>
+					<p>
+					Pour que HTTPScoop puisse capturer les conversations HTTP, le trafic doit atteindre l'adaptateur réseau de votre ordinateur. Généralement, sur un réseau commuté, vous n'aurez accès qu'au trafic pour lequel votre machine est client ou serveur. Une des solutions consiste à connecter votre ordinateur au même hub que l'ordinateur à surveiller.
+					</p>
+					<p>
+					Vous pouvez aussi écouter les conversations passant par un réseau sans fil non sécurisé bien que cela puisse ne pas marcher avec certaines routeurs sans fil. Veuillez contacter <a href="mailto:support@tuffcode.com">support@tuffcode.com</a> pour rapporter les configurations ne fonctionnant pas.
+					</p>
+					<p>
+					Attention : l'utilisation du mode promiscueux peut contrarier le respect de la vie privée. Soyez conscient que cela peut être detecté et assurez vous donc de toujours avoir l'autorisation de l'administrateur du réseau avant d'utiliser cette technique.
+					</p>
+				</td>
+			</tr>
+		</table>
+
+		<a name="hosts"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>Restreindre aux hôtes</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+					Cette option vous permet de limiter les conversations qui sont capturées à celles dont le client ou le serveur apparait dans la liste. Cette solution permet d'éviter le message &quot;Trafic trop rapide : quelques paquets perdus&quot; (voir <a href="solvingProblems.html">Résolution des problèmes</a>).
+					</p>
+					<p>
+					Vous pouvez spécifier des noms d'hôtes (ex. www.tuffcode.com) aussi bien que des adresses IP.
+					</p>
+				</td>
+			</tr>
+		</table>
+
+		<a name="ports"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>Restreindre aux ports</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+					Par défaut, HTTPScoop surveillera uniquement les conversations HTTP sur le port 80. Pour capturer sur d'autres ports TCP, vous pouvez les spécifier ici. N'oubliez pas d'ajouter explicitement le port 80 à la liste si vous voulez aussi capturer dessus.
+					</p>
+				</td>
+			</tr>
+		</table>
+
+		<a name="limit"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>Ne pas limiter la taille de la sortie</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+					Normalement, HTTPScoop limite la taille des données présentées afin d'éviter de consommer trop de mémoire. Au delà de cette limite, les données seront tronquées et un avertissement sera affiché.
+					</p>
+					<p>
+					Bien que cette limite soit généralement acceptable, certaines taches spécialisées peuvent demander le retrait de cette restriction.
+					</p>
+					<p>
+					Désactivez cette sécurité à vos risques et périls ! 
+					</p>
+				</td>
+			</tr>
+		</table>
+	</center>
+
+</center>
+</body>
+
+</html>

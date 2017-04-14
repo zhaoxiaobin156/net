@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<TITLE>Understanding the information HTTPScoop presents to you</TITLE>
+	<META NAME="DESCRIPTION" CONTENT="Understanding the information HTTPScoop presents to you">
+	<META NAME="KEYWORDS" CONTENT="summary, headers, tcp, text, hex, post">
+	<LINK REL="stylesheet" TYPE="text/css" HREF="helpStyle.css">
+</head>
+
+<body>
+		<table width="100%" cellpadding="0" cellspacing="0" class="navSection">
+			<tr>
+				<td style="text-align: left"><a href="index.html">Home</a></td>
+			</tr>
+		</table>
+	<h2>Understanding the information HTTPScoop presents to you</h2>
+	<p>
+		HTTPScoop provides a number of views of captured HTTP conversations which are shown in different tabs in the HTTP Request Detail pop-up window. This window appears when you double-click a request.
+		<ul>
+			<li><a href="#summary">Summary</a></li>
+			<li><a href="#headers">Headers</a></li>
+			<li><a href="#post">POST Hex</a></li>
+			<li><a href="#responseText">Response Text</a></li>
+			<li><a href="#responseHex">Response Hex</a></li>
+			<li><a href="#responseImage">Response Image</a></li>
+			<li><a href="#tcp">TCP/IP</a></li>
+		</ul>
+	</p>
+
+<a name="summary"/>
+<center>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Summary</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_summary_small.png" width="219" height="105"/>
+							</p>
+						</td>
+						<td>
+							<p>
+							The request summary tab gives general information about the request and its current state: the URL, response line, content type and request/response size.
+							<p>
+							For ease of viewing, request parameters are broken out of the URL for requests made using the GET method, or out of the POST data for POST requests using the content-type <code>application/x-www-form-urlencoded</code>.
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="headers"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Headers</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_headers_small.png" width="219" height="104"/>
+							</p>
+						</td>
+						<td>
+							<p>
+								Each request and response may have associated header information. Request headers from web browsers typically include information about language preferences, browser type, acceptable file types and so on. Typical response headers from a server include information about the size and type of content being returned and how the content should be cached on the client, if at all.
+							</p>
+							<p>
+								Another important use of headers is to support cookies. Cookies allow a site to request that information is associated with it within the web browser  and returned when future requests are made. This allows user preferences to be stored, browsing habits to be monitored etc. Cookies may also be used to track browser sessions so that the server is able to see that different requests originate from the same browser window. Look out for <code>Cookie</code> request headers and <code>Set-cookie</code> response headers.
+							</p>
+							<p>
+								For more information on cookies, see <a href="http://www.faqs.org/rfcs/rfc2965.html">RFC 2965 - HTTP State Management Mechanism</a> or for request headers in general, see the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616.html">HTTP specification</a>.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="post"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>POST Hex</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_post_small.png" width="219" height="105"/>
+							</p>
+						</td>
+						<td valign="top">
+							<p>
+							The body of a POST request can be viewed in hex dump form on this tab. Note that there may be a delay in rendering dumps for large POSTs.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="responseText"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Response Text</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_response_text_small.png" width="219" height="105"/>
+							</p>
+						</td>
+						<td>
+							<p>
+							Shows the response body in text form after decompression (if gzip or deflate content encoding is used) and “de-chunking”. 
+							</p>
+							<p>
+							Chunking is a common technique for handling dynamic content, the size of which is not known beforehand. Rather than specifying a fixed content length the server sends “chunks” of data, with each chunk preceded by a length descriptor. The end of the response is indicated by a chunk size of zero. Because de-chunking is performed by HTTP Scoop automatically before the response text is shown, you won’t see chunking information in the response text. It can, however, be observed in the TCP/IP view.
+							</p>
+							<p>
+							Basic syntax colouring is performed for text/HTML and text/XML content types with elements, attributes, attribute values and comments highlighted.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="responseHex"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Response Hex</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_response_hex_small.png" width="219" height="104"/>
+							</p>
+						</td>
+						<td valign="top">
+							<p>
+							The body of a response can be viewed in hex dump form on this tab. Note that there may be a delay in rendering dumps for large responses. Like Response Text, this is a view of the response data after decompression and de-chunking where applicable.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="responseImage"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Response Image</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_response_image_small.png" width="219" height="108"/>
+							</p>
+						</td>
+						<td valign="top">
+							<p>
+							The Response Image tab shows returned images, scaled down to fit the view where appropriate. Note that the response <code>Content-Type</code> header must be set correctly for the image to be shown.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="tcp"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>TCP/IP</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_tcp_small.png" width="219" height="104"/>
+							</p>
+						</td>
+						<td>
+							<p>
+							This view allows you to see all activity on the TCP connection over which a request has been made. This gives you access to the raw data being sent over the wire, prior to any decompression, de-chunking etc. It can be useful in diagnosing protocol errors in custom HTTP clients or servers.
+							</p>
+							<p>
+							TCP sequence numbers and acknowledgments are shown along with the state of the TCP flags SYN, ACK, RST and FIN. Packet bodies are shown in a hex dump format.
+							</p>
+							<p>
+							The HTTP specification allows that multiple HTTP requests may be sent over the same TCP connection without waiting for a response. For this reason, the first request/response TCP packet body you see may not be for the HTTP request you selected. 
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+</center>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<TITLE>Résolution des problèmes</TITLE>	
+	<META HTTP-EQUIV="content-type" CONTENT="text-html; charset=utf-8">		
+	<LINK REL="stylesheet" TYPE="text/css" HREF="helpStyle.css">
+</head>
+
+<body>
+		<table width="100%" cellpadding="0" cellspacing="0" class="navSection">
+			<tr>
+				<td style="text-align: left"><a href="index.html">Accueil</a></td>
+			</tr>
+		</table>
+	<h2>Résolution des problèmes</h2>
+	<p>
+	Si vous avez un problème qui ne peut pas être résolu grâce à ces suggestions, veuillez contacter <a href="mailto:support@tuffcode.com">support@tuffcode.com</a> et nous essayerons de vous aider.
+	</p>
+	<p>
+		Catégories de problèmes :
+		<ul>
+			<li><a href="#missing">Requêtes manquantes</a></li>
+			<li><a href="#resetByPeer">&quot;Réinitialisée par un pair&quot;</a></li>
+			<li><a href="#closedByPeer">&quot;Fermée par un pair&quot;</a></li>
+			<li><a href="#tooFast">&quot;Trafic trop rapide : quelques paquets perdus&quot;</a></li>
+		</ul>
+	</p>
+
+	<center>
+		<a name="missing"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>Requêtes manquantes</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+					Si vous ne voyez pas les requêtes HTTP espérées, vérifiez d'abord que vous bien sélectionné l'adaptateur réseau approprié dans le menu déroulant en haut à droite. Vérifiez aussi que vous n'avez pas été trop restrictif dans vos choix de ports dans les
+						<a href="settings.html">préférences</a>.
+					</p>
+					<p>
+					Spécifier un nom d'hôte dans la liste d'hôtes des préférences peut causer quelques problèmes. Premièrement, les autres ressources, comme les images, peuvent être stockées sur un autre serveur. Ensuite, certaines serveurs utilisent plusieurs IP pour le même nom d'hôte, afin de réduire la charge du serveur. L'adresse IP enregistrée par HTTPScoop risque alors de ne pas être la même que celle à laquelle le client accède.
+					</p>
+				</td>
+			</tr>
+		</table>
+	
+
+		<a name="resetByPeer"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>&quot;Réinitialisée par un pair&quot;</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+					Ce message de statut indique que le client ou le serveur ont forcé la fermeture de la connexion TCP utilisée pour la requête.
+					</p>
+					<p>
+					Les connexions peuvent être réinitialisées pour différentes raisons. Cela peut être parce qu'une erreur a été détectée dans les données reçues.
+					</p>
+				</td>
+			</tr>
+		</table>
+	
+		<a name="closedByPeer"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>&quot;Fermée par un pair&quot;</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+					Ce message de statut indique que la connexion TCP utilisée pour la conversation HTTP a été fermée avant que la réponse soit complètement lue. Cela peut être du à une erreur du serveur ou réseau.
+					</p>
+					<p>
+					Ce message peut aussi apparaître si certains paquets ont été perdus. Regardez alors <a href="#tooFast">&quot;Trafic trop rapide : quelques paquets perdus&quot;</a>.
+					</p>
+				</td>
+			</tr>
+		</table>
+
+
+		<a name="tooFast"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>&quot;Trafic trop rapide : quelques paquets perdus&quot;</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+					Ce message apparaissant dans la barre de statut en haut indique que le système a ignoré certains paquets parce que la charge réseau ou CPU était trop grande.
+					</p>
+					<p>
+					Un client HTTP comme un navigateur ne souffre pas de ce problème parce qu'il utilise TCP pour contrôler le flot de données. Mais un observateur passif comme HTTPScoop doit être capable de soutenir le flux réseau afin de reconstruire précisément la conversation.
+					</p>
+					<p>
+					Le problème arrive le plus souvent dans ces situations :
+						<ul>
+							<li>
+							Haute charge CPU : si l'ordinateur sur lequel HTTPScoop est lancé est occupé par beaucoup de taches, le système accorde moins de temps à la capture et le décodage des paquets et peut commencer à la ignorer.
+							</li>
+							<li>
+							Haute charge réseau : s'il y a lien rapide entre le client et le serveur, HTTPScoop peut ne pas tenir le coup.
+							</li>
+							<li>En mode promiscueux :
+							s'il y a un fort trafic passant par l'adaptateur réseau qui est destiné à d'autres machines et que vous êtes en mode promiscueux, le nombre de paquets a analysé peut devenir trop grand.
+							</li>
+						</ul>							
+					</p>
+					<p>
+					La meilleure façon d'éviter ce problème est de s'assurer que vous surveillez uniquement les ports TCP appropriés et que vous utilisez le mode promiscueux uniquement quand nécessaire. Vous devriez aussi réduire l'activité des autres applications.
+					</p>
+					<p>
+					Notez qu'après que cet avertissement ait été affiché, vous ne pourrez plus enregistrer correctement le corps de la réponse.
+					Si le fichier a été capturé avant l'erreur et que son statut est "Terminé", il ne devrait pas y avoir de problèmes.
+					Sinon, videz la liste, recommencez la requête et réessayez d'enregistrer le fichier.
+					</p>
+				</td>
+			</tr>
+		</table>
+	</center>
+
+</center>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>HTTPScoop</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>HTTPScoop Help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>HTTPScoop Help</string>
+	<key>CFBundleIconFile</key>
+	<string>HTTPScoop</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.tuffcode.HTTPScoop</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>HTTPScoop</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.4.3</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright 2009 Tuffcode Ltd. All rights reserved.</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu2</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>SUCheckAtStartup</key>
+	<false/>
+	<key>SUFeedURL</key>
+	<string>http://www.tuffcode.com/releases/httpscoop-appcast.xml</string>
+</dict>
+</plist>

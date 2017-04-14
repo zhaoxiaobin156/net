@@ -1,0 +1,110 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<TITLE>Control what's captured with Preferences</TITLE>
+	<META NAME="KEYWORDS" CONTENT="settings, preferences, promiscuous, restrict, limit, host, port, hosts, ports, ip">
+	<META NAME="DESCRIPTION" CONTENT="Learn how to capture the traffic you need">
+	
+	<LINK REL="stylesheet" TYPE="text/css" HREF="helpStyle.css">
+</head>
+
+<body>
+		<table width="100%" cellpadding="0" cellspacing="0" class="navSection">
+			<tr>
+				<td style="text-align: left"><a href="index.html">Home</a></td>
+			</tr>
+		</table>
+	<h2>Control what's captured with <i>Preferences</i></h2>
+	<table width="100%">
+			<tr>
+				<td valign="top">
+					<p>
+						<img src="img/screenshot_settings_small.png" width="219" height="158"/>
+					</p>
+				</td>
+				<td valign="top">
+					<p>
+					The Preferences screen (accessed from the <i>HTTPScoop</i> menu when a capture is not in progress) allows you to describe what traffic you would like to capture. These settings are recorded in your user preferences, so be aware that they will be reloaded automatically next time you run the application.
+						
+					</p>
+					<p>
+						Settings:
+						<ul>
+							<li><a href="#promisc">Promiscuous Mode</a></li>
+							<li><a href="#hosts">Restrict to Hosts</a></li>
+							<li><a href="#ports">Restrict to Ports</a></li>
+						</ul>
+
+					</p>
+				</td>
+			<tr>
+	</table>
+
+	<center>
+		<a name="promisc"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>Promiscuous Mode</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+						Promiscuous mode allows you to capture HTTP conversations that do not involve the machine you are running HTTP Scoop on. This can be useful when neither server nor client are running on OS X. It can also be handy in production or integration testing environments where you need to examine a server’s behaviour to various clients <i>in-situ</i>.
+					</p>
+					<p>
+						Note that in order for HTTP Scoop to be able to capture HTTP conversations, the traffic must reach your computer’s network adapter. Generally on a switched network you will only be able to see traffic where your machine is the client or the server. A solution to this is to plug your computer into a network hub to which the server or client to be monitored is also connected. Hubs are inexpensive devices which pass all traffic to and from any connected port to all ports on the hub. Certain network switches can be configured to emulate a hub to achieve the same behaviour.
+					</p>
+					<p>
+						You can also listen in on conversations conducted over an unsecured wireless network although this may not work with all wireless routers. Please contact <a href="mailto:support@tuffcode.com">support@tuffcode.com</a> to report any configurations which you find do not work.
+					</p>
+					<p>
+						Finally, a word of warning: the use of promiscuous mode can obviously lead to an invasion of privacy. Please be aware that putting your network into adapter into promiscuous mode can be detected and is often frowned upon. Always seek authorisation from the network’s administrators before using this facility.
+					</p>
+				</td>
+			</tr>
+		</table>
+
+		<a name="hosts"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>Restrict to Hosts</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+					This option allows you to limit the conversations which are captured to those where the client or server appears in the list. As well as reducing clutter, this facility provides one way of avoiding the &quot;Traffic too fast: some packets lost&quot; message (see <a href="solvingProblems.html">Solving Problems</a>) by allowing the OS to quickly disregard packets which you are not interested in.
+					</p>
+					<p>
+					You may specify host names e.g. www.tuffcode.com as well as IP addresses. Be aware that this can have some unexpected side-effects however: see the Requests missing from capture troubleshooting topic for more information on this.					
+					</p>
+				</td>
+			</tr>
+		</table>
+
+		<a name="ports"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>Restrict to Ports</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+						By default, HTTP Scoop will only look for HTTP conversations conducted over port 80. To capture on other TCP ports, you can specify them here. Don’t forget to explicitly add port 80 to the list if you want to capture other ports in <i>addition</i> to the default.
+					</p>
+				</td>
+			</tr>
+		</table>
+	</center>
+
+</center>
+</body>
+
+</html>

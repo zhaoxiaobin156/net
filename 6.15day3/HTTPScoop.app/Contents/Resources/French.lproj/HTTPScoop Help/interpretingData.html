@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<TITLE>Comprendre les informations que HTTPScoop vous fournit</TITLE>
+	<META HTTP-EQUIV="content-type" CONTENT="text-html; charset=utf-8">	
+	<LINK REL="stylesheet" TYPE="text/css" HREF="helpStyle.css">
+</head>
+
+<body>
+		<table width="100%" cellpadding="0" cellspacing="0" class="navSection">
+			<tr>
+				<td style="text-align: left"><a href="index.html">Accueil</a></td>
+			</tr>
+		</table>
+	<h2>Comprendre les informations que HTTPScoop vous fournit.</h2>
+	<p>
+	HTTPScoop fournit un certaines nombres d'affichage des conversations HTTP capturées qui sont affichées dans les onglets de la fenêtre "Détail de la requête HTTP". Cette fenêtre apparaît en double-cliquant sur une requête.
+		<ul>
+			<li><a href="#summary">Résumé</a></li>
+			<li><a href="#headers">En-têtes</a></li>
+			<li><a href="#post">POST Hex</a></li>
+			<li><a href="#responseText">Texte de la réponse</a></li>
+			<li><a href="#responseHex">Réponse en héxadécimal</a></li>
+			<li><a href="#requestResponse">Requête/Réponse</a></li>
+			<li><a href="#responseHex">Image</a></li>
+			<li><a href="#tcp">TCP/IP</a></li>
+		</ul>
+	</p>
+
+<a name="summary"/>
+<center>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Résumé</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_summary_small.png" width="219" height="105"/>
+							</p>
+						</td>
+						<td>
+							<p>
+							L'onglet Résumé donne des informations d'ordre général à propos de la requête et de son état actuel : l'URL, la ligne de réponse, le type de contenu et la taille de la requête et de la réponse.
+							<p>
+							Pour faciliter l'affichage, les paramètres de la requête sont extraits de l'URL ou des données POST.
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="headers"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>En-têtes</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_headers_small.png" width="219" height="104"/>
+							</p>
+						</td>
+						<td>
+							<p>
+							Chaque requête et réponse peut avoir des en-têtes associés. Les en-têtes envoyés par les navigateurs web contiennent habituellement des informations à propos de la langue, le type de navigateur, les types de fichiers acceptés, etc... Les en-têtes envoyés par les serveurs contiennent généralement des informations à propos de la taille et du type de contenu renvoyé.
+							</p>
+							<p>
+							Les en-têtes servent aussi à supporter les cookies. Regardez les en-têtes <code>Cookie</code> et <code>Set-cookie</code>.
+							</p>
+							<p>
+								Pour plus d'informations sur les cookies, lisez <a href="http://www.faqs.org/rfcs/rfc2965.html">RFC 2965 - HTTP State Management Mechanism</a> ou sur les en-têtes en général : <a href="http://www.w3.org/Protocols/rfc2616/rfc2616.html">HTTP specification</a>.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="post"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>POST Hex</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_post_small.png" width="219" height="105"/>
+							</p>
+						</td>
+						<td valign="top">
+							<p>
+							Le corps d'une requête POST peut être affiché en héxadécimal dans cet onglet. Le rendu des grands POST peut prendre un certain temps.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="responseText"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Texte de la réponse</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_response_text_small.png" width="219" height="105"/>
+							</p>
+						</td>
+						<td>
+							<p>
+							Affiche le corps de la réponse au format texte après décompression (si un encodage gzip ou deflate est utilisé) et "de-chunking". 
+							</p>
+							<p>
+							Le chunking est une technique permettant de gérer du contenu dynamique, dont la taille n'est pas connue à l'avance. Plutôt que de spécifier une taille de contenu fixe, le serveur envoie des "morceaux" de données, chacun précédés d'une description. La fin de la réponse est indiqué par un morceau vide. Le de-chunking est effectué automatiquement par HTTPScoop, vous ne verrez donc pas d'informations "chunkées" dans le texte de la réponse. Vous pouvez par contre en rencontrer dans l'onglet TCP/IP.
+							</p>
+							<p>
+							Une coloration syntaxique basique est effectuée pour le contenu de type text/HTML et text/XML. Les éléments, attributs, valeurs et commentaires sont surlignés.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="responseHex"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Réponse en héxadécimal</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_response_hex_small.png" width="219" height="104"/>
+							</p>
+						</td>
+						<td valign="top">
+							<p>
+							Le corps d'une réponse peut être affiché en hexadécimal depuis cet onglet. Le rendu des grandes réponses peut prendre un certain temps. Comme pour l'onglet "Texte de la réponse", les données sont affichées après décompression et de-chunking.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="requestResponse"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Requête/Réponse</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_request_response_small.png" width="219" height="104"/>
+							</p>
+						</td>
+						<td valign="top">
+							<p>
+							Il est parfois pratique d'afficher le texte de la réponse à côté des paramètres ou données de la requête. Cet onglet vous permet de faire celà.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="image"/>
+	<table width="100%" class="image" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>Image</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_image_small.png" width="219" height="104"/>
+							</p>
+						</td>
+						<td valign="top">
+							<p>
+							Avec cet onglet, vous pouvez afficher et enregistrer des images GIF, PNG, JPEG, etc... même après qu'elles aient disparus de l'historique du navigateur.
+Les images sont redimensionnées pour être visible en entier.
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+	<a name="tcp"/>
+	<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+		<tr>
+			<th class="helpSection">
+				<h3>TCP/IP</h3>
+			</th>
+		</tr>
+		<tr>
+			<table width="100%">
+					<tr>
+						<td valign="top">
+							<p>
+								<img src="img/screenshot_tcp_small.png" width="219" height="104"/>
+							</p>
+						</td>
+						<td>
+							<p>
+							This view allows you to see all activity on the TCP connection over which a request has been made. This gives you access to the raw data being sent over the wire, prior to any decompression, de-chunking etc. It can be useful in diagnosing protocol errors in custom HTTP clients or servers.
+							</p>
+							<p>
+							TCP sequence numbers and acknowledgments are shown along with the state of the TCP flags SYN, ACK, RST and FIN. Packet bodies are shown in a hex dump format.
+							</p>
+							<p>
+							The HTTP specification allows that multiple HTTP requests may be sent over the same TCP connection without waiting for a response. For this reason, the first request/response TCP packet body you see may not be for the HTTP request you selected. 
+							</p>
+						</td>
+					<tr>
+			</table>
+		</tr>
+	</table>
+
+</center>
+</body>
+
+</html>

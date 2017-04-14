@@ -1,0 +1,135 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<TITLE>Problemlösung</TITLE>
+	<META NAME="KEYWORDS" CONTENT="missing, reset, peer, traffic">
+	<META NAME="DESCRIPTION" CONTENT="Understanding the causes of various problems and the steps which may be taken to avoid them">
+	<LINK REL="stylesheet" TYPE="text/css" HREF="helpStyle.css">
+</head>
+
+<body>
+		<table width="100%" cellpadding="0" cellspacing="0" class="navSection">
+			<tr>
+				<td style="text-align: left"><a href="index.html">Inhaltsverzeichnis</a></td>
+			</tr>
+		</table>
+	<h2>Problemlösung </h2>
+	<p>
+		Wenn Sie auf Probleme stoßen die durch die folgenden Hinweise nicht behoben werden können, besuchen Sie <a href="http://www.tuffcode.com/faq.html">Tuffcode Support FAQs</a> (englisch) oder wenden Sie sich an <a href="mailto:support@tuffcode.com">support@tuffcode.com</a>. Wir werden unser Bestes tun, um Ihnen zu helfen.
+	</p>
+	<p>
+		Problembereiche:
+		<ul>
+			<li><a href="#missing">Anfragen fehlen in der Aufzeichnung</a></li>
+			<li><a href="#resetByPeer">Anfragestatus &quot;Die Verbindung wurde vom Kommunikationspartner zurückgesetzt&quot;</a></li>
+			<li><a href="#closedByPeer">Anfragestatus &quot;Die Verbindung wurde vom Kommunikationspartner geschlossen&quot;</a></li>
+			<li><a href="#tooFast">&quot;Datenverkehr zu schnell - einige Pakete verloren&quot; wird in der Statusliste angezeigt</a></li>
+		</ul>
+	</p>
+
+	<center>
+		<a name="missing"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>Anfragen fehlen in der Aufzeichnung</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+						Wenn sie nicht die HTTP-Anfragen sehen die Sie erwarten, stellen Sie zuerst sicher, dass Sie in der Auswahlliste oben rechts die richtige Netzwerkschnittstelle gewählt haben. Überprüfen Sie außerdem, dass ihre Einschränkungen bezüglich Ports und Rechnern in den <a href="settings.html">Einstellungen</a> nicht zu restriktiv sind.
+					</p>
+					<p>
+						In einigen Situationen kann es verwirrend sein, wenn Sie einen Rechnernamen (statt eine IP) in der Liste "Beschränke auf Rechner" angeben. Zum einen weil bei Websites manchmal einige Ressourcen wie z.B. Bilder von anderen Rechnern geladen werden. Manche Websites nutzen außerdem round-robin DNS zur Lastverteilung, so dass mehrfache Auflösung des gleichen Rechnernamens zu unterschiedlichen IP-Adressen führt. In diesem Fall kann die IP-Adresse die HTTP Scoop ermittelt hat - und nach der HTTP Scoop dann Datenverkehr filtert - eine andere sein, als die auf die der Client zugreift. 
+					</p>
+				</td>
+			</tr>
+		</table>
+	
+
+		<a name="resetByPeer"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>Anfragestatus &quot;Die Verbindung wurde vom Kommunikationspartner zurückgesetzt&quot;</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+						Diese Statusmeldung zeigt an, dass entweder der Client oder der Server die TCP-Verbindung über die eine HTTP-Anfrage gesendet wurde explizit beendet hat. Dies wird durch setzen des RST-Bits im TCP-Header gemacht. Sie können dies nachprüfen indem Sie die TCP-Flags im Register "TCP/IP" durchsehen.
+					</p>
+					<p>
+						Verbindungen können aus verschiedenen Gründen zurückgesetzt werden. Es kann sein, dass Client oder Server einen Fehler in den empfangenen Daten festgestellt haben, ein Timeout aufgetreten ist, oder ein ungültiger TCP-Header empfangen wurde.
+					</p>
+					<p>
+						Das RST-Flag wird von manchen Servern auch gesetzt, wenn sie auf Grund von hoher Last die genutzten Ressourcen schnell freigeben müssen. Browser wiederholen HTTP-Anfragen für gewöhnlich erneut über eine neue TCP-Verbindung, wenn die Verbindung unerwartet zurückgesetzt wird.
+					</p>
+					<p>
+						Einige Browser setzen das RST-Flag anstatt die TCP-Verbindung wie es sein sollte mit einem FIN-Handshake zu schließen wenn ein Seitenabruf abgebrochen wird, da das Browserfenster geschlossen oder der ganze Browser beendet wird.	
+					</p>
+				</td>
+			</tr>
+		</table>
+	
+		<a name="closedByPeer"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>Anfragestatus &quot;Die Verbindung wurde vom Kommunikationspartner geschlossen&quot;</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+						Diese Statusmeldung zeigt an, dass die TCP-Verbindung über die die HTTP-Kommunikation stattfindet geschloßen wurde, bevor die Antwort vollständig gelesen war. Dies kann durch einen Server-/Netzwerkfehler oder Überlastung des Servers hervorgerufen werden.
+					</p>
+					<p>
+						Diese Nachricht kann auch auftreten, wenn einige Pakete verloren wurden - siehe auch <a href="#tooFast">&quot;Datenverkehr zu schnell - einige Pakete verloren&quot;</a>.
+					</p>
+				</td>
+			</tr>
+		</table>
+
+
+		<a name="tooFast"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>&quot;Datenverkehr zu schnell - einige Pakete verloren&quot; wird in der Statusliste angezeigt</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+						Das Auftauchen dieser Nachricht in Statusleiste zeigt an, dass das Betriebssystem einige Pakete verworfen hat, da die CPU- oder Netzwerklast zu groß war.
+					</p>
+					<p>
+						Ein HTTP-Client (wie z.B. Browser) haben dieses Problem nicht, da Sie TCP nutzen, um den Datenfluss zu steuern - es wird immer nur eine bestimmte Menge an Daten vom Server gesendet bevor eine Empfangsbestätigung gesendet werden muss. Im Gegensatz dazu, muss es ein passiver Beobachter wie HTTP Scoop schaffen mit dem Datenverkehr mitzukommen, um die Kommunikation korrekt rekonstruieren zu können.
+					</p>
+					<p>
+						Das Problem tritt meistens in den folgenden Situationen auf:
+						<ul>
+							<li>Hohe CPU-Last - wenn der Computer auf dem Sie HTTP Scoop ausführen eine CPU-intensive Aufgabe durchführt, verbleibt für das Betriebssystem weniger Zeit um Pakete aufzuzeichnen und zu dekodieren. Dann verwirft es unter Umständen einige Pakete.</li>
+							<li>Hohe Netzwerkauslastung - wenn zwischen dem Client und dem Server eine schnelle Netzwerkverbindung besteht (z.B. wenn sie innerhalb des selben lokalen Netzwerks sind) und/oder HTTP-Anfragen in einer sehr schnelle Abfolge gemacht werden kann es passieren, dass HTTPScoop nicht mehr mithalten kann.</li>
+							<li>Beim Aufzeichnen im Promiscuous Mode - wenn viel Datenverkehr welcher für andere Rechner bestimmt ist den Ntzwerkadapter erreicht und im Promiscuous Mode aufgezeichnet wird kann die zu verarbeitende Paketrate zu hoch werden.</li>
+						</ul>							
+					</p>
+					<p>
+						Der beste Weg um dieses Problem zu vermeiden, ist nur auf den TCP-Ports aufzuzeichen, die benötigt werden, Promiscuous Mode nur einzusetzen, wo er wirklich benötigt wird, und die Aufzeichnung auf die benötigten Rechner einzuschränken. Sie sollten außerdem die CPU-Aktivität von anderen Programmen so klein wie möglich halten. Unter extremen Bedingungen kann das Schließen des Fensters "Details der HTTP-Anfrage" die CPU-Nutzung reduzieren (und damit die Zuverlässigkeit der Aufzeichnung verbessern).
+					</p>
+					<p>
+						Bitte beachten Sie, dass nachdem diese Warnung angezeigt wurde, jeder Versuch einen Antwortkörper abzuspeichern eine Warnung produzieren wird, da die Datei auf Grund von fehlenden Paketen defekt sein könnte. Wenn die Datei aufgezeichnet wurde, bevor Pakete verworfen wurden und den Status Fertig hat, sollte die Datei vollständig sein. Die Warnung ist so konzipiert, damit Sie gründlich darüber nachdenken ob Schaden entstehen könnte wenn die Datei falsch aufgezeichnet wurde - vor allem beim Speichern von ausführbaren Dateien. Leeren Sie die Liste der Anfragen und versuchen Sie die Datei nochmals aufzuzeichnen, um die Warnung zu vermeiden.
+					</p>
+				</td>
+			</tr>
+		</table>
+	</center>
+
+</center>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<TITLE>Solving Problems</TITLE>
+	<META NAME="KEYWORDS" CONTENT="missing, reset, peer, traffic">
+	<META NAME="DESCRIPTION" CONTENT="Understanding the causes of various problems and the steps which may be taken to avoid them">
+	<LINK REL="stylesheet" TYPE="text/css" HREF="helpStyle.css">
+</head>
+
+<body>
+		<table width="100%" cellpadding="0" cellspacing="0" class="navSection">
+			<tr>
+				<td style="text-align: left"><a href="index.html">Home</a></td>
+			</tr>
+		</table>
+	<h2>Solving Problems</h2>
+	<p>
+		If you find are experiencing a problem which cannot be resolved by following these suggestions then check out the <a href="http://www.tuffcode.com/faq.html">Tuffcode Support FAQs</a> or contact <a href="mailto:support@tuffcode.com">support@tuffcode.com</a> and we will do our best to help you.
+	</p>
+	<p>
+		Problem categories:
+		<ul>
+			<li><a href="#missing">Requests missing from capture</a></li>
+			<li><a href="#resetByPeer">&quot;Reset by peer&quot; request status</a></li>
+			<li><a href="#closedByPeer">&quot;Closed by peer&quot; request status</a></li>
+			<li><a href="#tooFast">&quot;Traffic too fast: some packets lost&quot; shown in status bar</a></li>
+		</ul>
+	</p>
+
+	<center>
+		<a name="missing"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>Requests missing from capture</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+						If you fail to see the HTTP requests you were expecting, first ensure that you have selected the appropriate network interface from the drop-down at the top-right of the main screen. Check also that you have not been too restrictive in the ports and hosts you have specified in <a href="settings.html">Scoop Settings</a>.
+					</p>
+					<p>
+						Specifying a host name (as opposed to an IP address) in the Restrict to hosts list in Scoop Settings can cause confusion in a couple of situations. Firstly, the host name you type into a browser may be where the HTML is stored, but other resources such as images may be held on another server. Also, some sites use round-robin DNS for load balancing in which successive host lookups result in different IP addresses being resolved. In this case, the IP address which HTTP Scoop resolves a host name to - and hence filters traffic upon - could be different to the IP address being accessed by the client.
+					</p>
+				</td>
+			</tr>
+		</table>
+	
+
+		<a name="resetByPeer"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>&quot;Reset by peer&quot; request status</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+						This status message indicates that either the client or the server has forcibly closed the TCP connection over which an HTTP request was sent. This is carried out by setting the RST bit in a TCP header. You can verify this by examining the TCP flags shown in the TCP/IP tab.
+					</p>
+					<p>
+						Connections may be reset for a variety of reasons. It may be set because an error has been detected in data received by the client or server, for example a timeout may have occurred or an invalid TCP header may have been received.
+					</p>
+					<p>
+						The RST flag is also issued by some servers when they need to release resources quickly because of high loading. When a browser gets an unexpected connection reset from a web-server it will typically retry the HTTP request on a new TCP connection.
+					</p>
+					<p>
+						Some browsers issue the RST flag rather than a graceful TCP close using a FIN handshake when a page load is cancelled because the browser window is being closed or the browser is being exited entirely.					
+					</p>
+				</td>
+			</tr>
+		</table>
+	
+		<a name="closedByPeer"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>&quot;Closed by peer&quot; request status</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+						This status message indicates that the TCP connection over which the HTTP conversation is being conducted has been closed before the response was completely read. This could be due to a server or network error or because of congestion on the server.
+					</p>
+					<p>
+						This message may also appear if some packets were lost - check for the <a href="#tooFast">&quot;Traffic too fast: some packets lost&quot;</a> message.
+					</p>
+				</td>
+			</tr>
+		</table>
+
+
+		<a name="tooFast"/>
+		<table width="100%" class="helpSection" cellpadding="0" cellspacing="0">
+			<tr>
+				<th class="helpSection">
+					<h3>&quot;Traffic too fast: some packets lost&quot; shown in status bar</h3>
+				</th>
+			</tr>
+			<tr>
+				<td class="helpSection">
+					<p>
+						This message appearing in the status bar at the top of the screen indicates that the Operating System discarded some packets because the CPU and/or network load has been too great.
+					</p>
+					<p>
+						An HTTP client such as a browser does not suffer from this problem because it uses TCP to control the flow of data - only a certain amount of data will be sent from the server before an acknowledgement must be sent. In contract, a passive observer such as HTTP Scoop must be able to keep up with the flow of network traffic in order to be able to accurately reconstruct the conversation.
+					</p>
+					<p>
+						The problem is more likely to arise in the following situations:
+						<ul>
+							<li>High CPU load - if the computer on which you are running HTTP Scoop is busy with a CPU-intensive task then less time is available to the OS to capture and decode packets and may begin to discard them.</li>
+							<li>High network load - if there is a fast link between client and server e.g. they are on the same LAN and/or a very rapid succession of HTTP requests are made, HTTP Scoop may not be able to keep up.</li>
+							<li>When running in promiscuous mode - if there's a lot of traffic hitting the adapter which is destined for other machines, and you are operating in promiscuous mode, then the rate of packets to be processed may become too great.</li>
+						</ul>							
+					</p>
+					<p>
+						The best way to avoid this problem is to check your settings to ensure that you only monitor the appropriate TCP ports, only use promiscuous mode where necessary and restrict the capture to the required hosts. You should also minimise CPU activity from other applications. In extreme
+						circumstances, you may find that it reduces CPU utilisation (and hence the reliability of the capture) to close the &quot;HTTP Request Detail&quot; 
+						window during periods of intense network activity.
+					</p>
+					<p>
+						Note that after this warning has been shown, any attempt to save a response body will give a warning that the file may be corrupt due to missing packets. If the file was captured prior to packets being dropped and has a status of Done then the file's integrity should be intact. However the warning is designed to make you think twice - especially when saving executables - about whether any damage could result from the file being incorrectly recorded. To avoid the warning simply clear the list, reissue the request and attempt to capture the file again.
+					</p>
+				</td>
+			</tr>
+		</table>
+	</center>
+
+</center>
+</body>
+
+</html>
