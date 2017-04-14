@@ -1,0 +1,522 @@
+{\rtf1\ansi\ansicpg936\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fnil\fcharset134 STHeitiSC-Light;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green116\blue0;\red170\green13\blue145;\red46\green13\blue110;
+\red92\green38\blue153;\red28\green0\blue207;\red196\green26\blue22;\red63\green110\blue116;\red26\green26\blue26;
+\red100\green56\blue32;\red43\green71\blue20;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25400\viewh14080\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx13049\tx14798\pardirnatural
+
+\f0\fs72 \cf0 \'d2\'bb.\'ca\'b2\'c3\'b4\'ca\'c7\'b6\'e0\'cf\'df\'b3\'cc\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 		
+\fs36 \'b0\'d1\'b2\'bb\'cd\'ac\'b5\'c4\'c8\'ce\'ce\'f1\'b7\'c5\'b5\'bd\'b2\'bb\'cd\'a8\'b5\'c4\'cf\'df\'b3\'cc\'b5\'b1\'d6\'d0\'c8\'a5,\'bd\'e2\'be\'f6\'bd\'e7\'c3\'e6\'bf\'a8\'cb\'c0\'ce\'ca\'cc\'e2.\'c0\'fd\'c8\'e7\'b6\'e0\'c8\'ce\'ce\'f1\'cf\'c2\'d4\'d8.
+\fs72 \
+\'b6\'fe
+\f1 .
+\f0 NSThread\
+	
+\fs48 2.1 \'c8\'fd\'d6\'d6\'b4\'b4\'bd\'a8\'cf\'df\'b3\'cc\'b7\'bd\'ca\'bd
+\fs72 \
+	 
+\f1\fs36 \CocoaLigature0  \cf2 //
+\f0 \'b5\'da\'d2\'bb\'d6\'d6\'b4\'b4\'bd\'a8\'cf\'df\'b3\'cc\'b5\'c4\'b7\'bd\'ca\'bd\
+	
+\f1 \cf0  [\cf3 self\cf0  \cf4 performSelectorInBackground\cf0 :\cf3 @selector\cf0 (thread1) \cf4 withObject\cf0 :\cf3 nil\cf0 ];\
+\
+\pard\tx1155\pardeftab1155\pardirnatural
+\cf2        //
+\f0 \'b4\'b4\'bd\'a8\'cf\'df\'b3\'cc\'b5\'c4\'b5\'da\'b6\'fe\'d6\'d6\'b7\'bd\'ca\'bd\
+\pard\tx1155\pardeftab1155\pardirnatural
+
+\f1 \cf0       [\cf5 NSThread\cf0  \cf4 detachNewThreadSelector\cf0 :\cf3 @selector\cf0 (thread2:) \cf4 toTarget\cf0 :\cf3 self\cf0  \cf4 withObject\cf0 :\cf6 @(100)\cf0 ];\
+\
+\pard\tx1155\pardeftab1155\pardirnatural
+\cf2       //
+\f0 \'b4\'b4\'bd\'a8\'cf\'df\'b3\'cc\'b5\'c4\'b5\'da\'c8\'fd\'d6\'d6\'b7\'bd\'ca\'bd\
+\pard\tx1155\pardeftab1155\pardirnatural
+
+\f1 \cf5       NSThread\cf0  *thread = [[\cf5 NSThread\cf0  \cf4 alloc\cf0 ]\cf4 initWithTarget\cf0 :\cf3 self\cf0  \cf4 selector\cf0 :\cf3 @selector\cf0 (thread3) \cf4 object\cf0 :\cf3 nil\cf0 ];
+\f0 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 	
+\f1 \CocoaLigature0 [thread \cf4 setName\cf0 :\cf7 @"thread3"\cf0 ];\
+	[thread \cf4 start\cf0 ];\
+\
+	
+\fs48 2.2 
+\f0 \'bc\'e0\'cc\'fd\'cf\'df\'b3\'cc\'bd\'e1\'ca\'f8
+\f1\fs36 \
+\pard\tx1155\pardeftab1155\pardirnatural
+\cf0     [[\cf5 NSNotificationCenter\cf0  \cf4 defaultCenter\cf0 ]\cf4 addObserver\cf0 :\cf3 self\cf0  \cf4 selector\cf0 :\cf3 @selector\cf0 (myThreadFinish:) \cf4 name\cf0 :\cf5 NSThreadWillExitNotification\cf0  \cf4 object\cf0 :\cf3 nil\cf0 ];\
+\pard\tx1155\pardeftab1155\pardirnatural
+
+\f0 \cf0 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 	
+\f1 \CocoaLigature0 - (\cf3 void\cf0 )myThreadFinish:(\cf5 NSNotification\cf0  *)notification\
+\pard\tx1155\pardeftab1155\pardirnatural
+\cf0 	\{\
+   		 \cf5 NSThread\cf0  *thread = [notification \cf4 object\cf0 ];\
+    		\cf3 if\cf0  ([thread.\cf5 name\cf0  \cf4 isEqualToString\cf0 :\cf7 @"thread3"\cf0 ])\
+   		 \{\
+        			\cf4 NSLog\cf0 (\cf7 @"thread3 finish!"\cf0 );\
+    		\}\
+    		\cf4 NSLog\cf0 (\cf7 @"thread ===%@"\cf0 ,thread);\
+	\}\
+\
+     
+\fs48 2.3 
+\f0 \'cf\'df\'b3\'cc\'bc\'e4\'cd\'a8\'d1\'b6
+\fs36 \cf2 \
+\pard\tx1155\pardeftab1155\pardirnatural
+\cf0 \CocoaLigature1    	
+\f1 \CocoaLigature0 - (\cf3 void\cf0 )thread4\
+	\{\
+    		\cf3 for\cf0  (\cf3 int\cf0  i = \cf6 0\cf0 ; i<\cf6 10\cf0 ; i++)\
+    		\{\
+        			\cf4 NSLog\cf0 (\cf7 @"thread4  i===%d"\cf0 ,i);\
+        			[\cf5 NSThread\cf0  \cf4 sleepForTimeInterval\cf0 :\cf6 1.0\cf0 ];\
+        \
+       		 \cf3 if\cf0  (i == \cf6 8\cf0 )\
+      		  \{\
+           			 \cf2 //
+\f0 \'b8\'f8
+\f1 _thread5
+\f0 \'b7\'a2
+\f1 cancel
+\f0 \'cf\'fb\'cf\'a2
+\f1 .
+\f0 \'bd\'f6\'bd\'f6\'d6\'bb\'ca\'c7\'b7\'a2\'cf\'fb\'cf\'a2
+\f1 ,
+\f0 \'b4\'a6\'b2\'bb\'b4\'a6\'c0\'ed
+\f1 ,
+\f0 \'d3\'c9
+\f1 _thread5
+\f0 \'d7\'d4\'bc\'ba\'be\'f6\'b6\'a8
+\f1 \cf0 \
+           			 [\cf8 _thread5\cf0  \cf4 cancel\cf0 ];\
+      		  \}\
+    		\}\
+	\}\
+\
+	- (\cf3 void\cf0 )thread5\
+	\{\
+    		\cf3 int\cf0  i = \cf6 0\cf0 ;\
+    		\cf3 while\cf0  (\cf6 1\cf0 )\
+    		\{\
+        			\cf4 NSLog\cf0 (\cf7 @"thread5===%d"\cf0 ,i);\
+      			[\cf5 NSThread\cf0  \cf4 sleepForTimeInterval\cf0 :\cf6 1.0\cf0 ];\
+       			i++;\
+        			\cf2 //
+\f0 \'c8\'e7\'b9\'fb
+\f1 thread5 
+\f0 \'bd\'d3\'ca\'d5\'b5\'bd\'c1\'cb
+\f1 cancel
+\f0 \'cf\'fb\'cf\'a2
+\f1 ,
+\f0 \'be\'cd\'cd\'cb\'b3\'f6
+\f1 \cf0 \
+       			 \cf3 if\cf0  ([[\cf5 NSThread\cf0  \cf4 currentThread\cf0 ]\cf4 isCancelled\cf0 ])\
+       			\{\
+           			 \cf4 NSLog\cf0 (\cf7 @"thread5  exit"\cf0 );\
+            		\cf2 //
+\f0 \'d6\'b4\'d0\'d0\'cf\'df\'b3\'cc\'cd\'cb\'b3\'f6
+\f1 \cf0 \
+            		[\cf5 NSThread\cf0  \cf4 exit\cf0 ];\
+        			\}\
+   		\}\
+	\}\
+\
+
+\f0 \CocoaLigature1 	
+\fs48 2.4 \'cf\'df\'b3\'cc\'cb\'f8
+\fs36 \
+	
+\f1 \cf8 \CocoaLigature0 _sumLock\cf0   = [[\cf5 NSLock\cf0  \cf4 alloc\cf0 ]\cf4 init\cf0 ];\
+    	\cf8 _sum\cf0  = \cf6 0\cf0 ;\
+\
+\pard\tx533\pardeftab533\pardirnatural
+
+\fs40 \cf2 		//
+\f0 \'c8\'e7\'b9\'fb\'c1\'bd\'b8\'f6\'cf\'df\'b3\'cc\'d2\'aa\'b7\'c3\'ce\'ca\'cd\'ac\'d2\'bb\'b8\'f6\'b1\'e4\'c1\'bf
+\f1 ,
+\f0 \'be\'cd\'b1\'d8\'d0\'eb\'bc\'d3\'cb\'f8\'b1\'a3\'bb\'a4
+\f1 \cf0 \
+    	\cf3 while\cf0  (\cf6 1\cf0 )\
+		 \{\
+       		 \cf2 //
+\f0 \'bc\'d3\'cb\'f8
+\f1 \cf0 \
+        	[\cf8 _sumLock\cf0  \cf4 lock\cf0 ];\
+       		 \cf8 _sum\cf0  ++;\
+        	\cf4 NSLog\cf0 (\cf7 @"thread7-->_sum==%d"\cf0 ,\cf8 _sum\cf0 );\
+        	\cf2 //
+\f0 \'bd\'e2\'cb\'f8
+\f1 \cf0 \
+        	[\cf8 _sumLock\cf0  \cf4 unlock\cf0 ];\
+        	[\cf5 NSThread\cf0  \cf4 sleepForTimeInterval\cf0 :\cf6 1.0\cf0 ];\
+   		\}\
+\
+		\cf3 while\cf0  (\cf6 1\cf0 ) \{\
+        [\cf8 _sumLock\cf0  \cf4 lock\cf0 ];\
+         \cf8 _sum\cf0  --;\
+        \cf4 NSLog\cf0 (\cf7 @"thread8-->_sum==%d"\cf0 ,\cf8 _sum\cf0 );\
+        [\cf8 _sumLock\cf0  \cf4 unlock\cf0 ];\
+        [\cf5 NSThread\cf0  \cf4 sleepForTimeInterval\cf0 :\cf6 2.0\cf0 ];\
+    	\}
+\fs36 \
+\pard\tx1155\pardeftab1155\pardirnatural
+\cf0 \
+	
+\fs48 2.5 
+\f0 \'d7\'d3\'cf\'df\'b3\'cc\'cb\'a2\'d0\'c2
+\f1 UI\
+	
+\fs36 \cf8 _progress\cf0  = [[\cf5 UIProgressView\cf0  \cf4 alloc\cf0 ]\cf4 initWithFrame\cf0 :\cf4 CGRectMake\cf0 (\cf6 100\cf0 , \cf6 100\cf0 , \cf6 200\cf0 , \cf6 30\cf0 )];\
+\pard\tx400\pardeftab400\pardirnatural
+\cf0    			 [\cf3 self\cf0 .\cf5 view\cf0  \cf4 addSubview\cf0 :\cf8 _progress\cf0 ];\
+    \
+  	 	 	[\cf3 self\cf0  \cf4 performSelectorInBackground\cf0 :\cf3 @selector\cf0 (myThread) \cf4 withObject\cf0 :\cf3 nil\cf0 ];\
+\pard\tx1155\pardeftab1155\pardirnatural
+\cf0 	\
+	- (\cf3 void\cf0 )myThread\
+\pard\tx400\pardeftab400\pardirnatural
+\cf0 			\{\
+   				 \cf3 for\cf0  (\cf3 int\cf0  i=\cf6 1\cf0 ; i<\cf6 11\cf0 ; i++)\
+   				 \{\
+       				 [\cf3 self\cf0  \cf4 performSelectorOnMainThread\cf0 :\cf3 @selector\cf0 (myMain:) \cf4 withObject\cf0 :\cf6 @(\cf0 i\cf6 )\cf0  \cf4 waitUntilDone\cf0 :\cf3 YES\cf0 ];\
+       				 [\cf5 NSThread\cf0  \cf4 sleepForTimeInterval\cf0 :\cf6 1\cf0 ];\
+    			\}\
+			\}\
+	\
+		- (\cf3 void\cf0 )myMain:(\cf5 NSNumber\cf0  *)number\
+		\{\
+    			\cf4 NSLog\cf0 (\cf7 @"number==%@"\cf0 ,number);\
+    			[\cf8 _progress\cf0  \cf4 setProgress\cf0 :number.\cf5 floatValue\cf0 *\cf6 0.1\cf0  \cf4 animated\cf0 :\cf3 YES\cf0 ];\
+		\}
+\f0 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\fs72 \cf0 \'c8\'fd.\CocoaLigature0 NSOperationQueue\
+		
+\fs48 \cf9 \CocoaLigature1 3.1\'c8\'ce\'ce\'f1\'b3\'d8
+\f1\fs36 \cf0 \CocoaLigature0 \
+\pard\tx400\pardeftab400\pardirnatural
+\cf0     			\cf5 NSOperationQueue\cf0  *queue = [[\cf5 NSOperationQueue\cf0  \cf4 alloc\cf0 ]\cf4 init\cf0 ];\
+				
+\f0 \'c9\'e8\'d6\'c3\'d7\'ee\'b4\'f3\'b2\'a2\'d0\'d0\'cf\'df\'b3\'cc\'ca\'fd\'c1\'bf
+\f1 \
+    			queue.\cf5 maxConcurrentOperationCount\cf0  = \cf6 1\cf0 ;\
+\pard\tx400\pardeftab400\pardirnatural
+
+\f0\fs72 \cf0 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 		
+\fs48 \cf9 3.2 NSInvocationOperation
+\f1 \cf0 \CocoaLigature0 \
+			
+\fs36 \cf5 NSInvocationOperation\cf0  *operation1= [[\cf5 NSInvocationOperation\cf0  \cf4 alloc\cf0 ]\cf4 initWithTarget\cf0 :\cf3 self\cf0  \cf4 selector\cf0 :\cf3 @selector\cf0 (myOperation1) \cf4 object\cf0 :\cf3 nil\cf0 ];\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\fs48 \cf0 \
+		
+\f0 \cf9 \CocoaLigature1 3.3 NSBlockOperation
+\f1 \cf5 \CocoaLigature0 \
+			
+\fs36 NSBlockOperation\cf0  *operation2 = [\cf5 NSBlockOperation\cf0  \cf4 blockOperationWithBlock\cf0 :^\{\
+\pard\tx400\pardeftab400\pardirnatural
+\cf0        					 \cf4 NSLog\cf0 (\cf7 @" i am operation2"\cf0 );\
+         				[\cf5 NSThread\cf0  \cf4 sleepForTimeInterval\cf0 :\cf6 5\cf0 ];\
+   				 \}];\
+\
+\pard\tx400\pardeftab400\pardirnatural
+
+\f0\fs72 \cf0 \CocoaLigature1 			
+\fs48 \cf9 3.4 \'d7\'d4\'b6\'a8\'d2\'e5\'b5\'c4operation
+\f1 \CocoaLigature0 \
+			
+\fs36 \cf5 NSArray\cf0  *urlArrays = [\cf5 NSArray\cf0  \cf4 arrayWithObjects\cf0 :\cf7 @"http://s8.mogucdn.com/pic/141109/49ssv_ieydmolegjsdqyzwmqytambqgiyde_173x80.jpg"\cf0 , \cf7 @"http://s8.mogucdn.com/pic/141118/7jax4_ieydkntggvrwknzzmqytambqmmyde_173x80.jpg"\cf0 , \cf7 @"http://s7.mogucdn.com/pic/141111/anxuan_ieygkyjzgnsdanrxmqytambqmmyde_173x80.jpg"\cf0 , \cf3 nil\cf0 ];\
+    \
+\pard\tx400\pardeftab400\pardirnatural
+\cf2 			
+\f0 \cf0 \'bb\'d8\'b5\'f7\'b5\'c4
+\f1 blocks\
+\pard\tx400\pardeftab400\pardirnatural
+\cf3 			typedef\cf0  \cf3 void\cf0  (^completionCallBack)(\cf8 MyOperation\cf0  *operation,\cf5 NSData\cf0  *data);\
+\
+			tag
+\f0 \'b1\'ea\'bc\'c7\'cf\'df\'b3\'cc
+\f1 \
+\cf3 			@property\cf0  (\cf3 nonatomic\cf0 ,\cf3 assign\cf0 )\cf3 int\cf0  tag;\
+			
+\f0 \'d7\'d4\'b6\'a8\'d2\'e5\'b9\'b9\'d4\'ec\'b7\'bd\'b7\'a8
+\f1 \
+			- (\cf3 id\cf0 )initWithURL:(\cf5 NSString\cf0  *)URL completionCallBack:(\cf8 completionCallBack\cf0 )callback;
+\fs48 \cf9 \
+		\
+			
+\f0\fs36 \cf0 \'d6\'d8\'d0\'b4
+\f1 main
+\f0 \'b7\'bd\'b7\'a8
+\f1\fs48 \cf9 \
+
+\fs36 \cf0 			- (\cf3 void\cf0 )main\
+			\{\
+   					     \cf5 NSURL\cf0  *url = [\cf5 NSURL\cf0  \cf4 URLWithString\cf0 :\cf8 _url\cf0 ];\
+						 \cf5 NSURLRequest\cf0  *request = [\cf5 NSURLRequest\cf0  \cf4 requestWithURL\cf0 :url];\
+  					   	 [\cf5 NSURLConnection\cf0  \cf4 connectionWithRequest\cf0 :request \cf4 delegate\cf0 :\cf3 self\cf0 ];\
+    \
+  						  \cf4 NSLog\cf0 (\cf7 @"distantFutureTime===%@"\cf0 ,[[\cf5 NSDate\cf0  \cf4 distantFuture\cf0 ]\cf4 description\cf0 ]);\
+\pard\tx400\pardeftab400\pardirnatural
+\cf2 						 //  NSRunLoop  
+\f0 \'ca\'c7\'d2\'bb\'b8\'f6\'d1\'ad\'bb\'b7\'ca\'c2\'bc\'fe
+\f1 ,
+\f0 \'c3\'bf\'d2\'bb\'b8\'f6
+\f1 viewcontroller
+\f0 \'b6\'bc\'d3\'d0\'d2\'bb\'b8\'f6
+\f1 runloop\cf0 \
+\cf2 						 //  NSRunLoop 
+\f0 \'d3\'d0\'c8\'ce\'ce\'f1\'be\'cd\'d7\'f8\'c8\'ce\'ce\'f1
+\f1 ,
+\f0 \'c3\'bb\'c8\'ce\'ce\'f1\'be\'cd\'b5\'c8\'b4\'fd
+\f1 \cf0 \
+\cf2 						 //  [NSDate distantFuture]  
+\f0 \'d3\'c0\'d4\'b6\'b2\'bb\'bb\'e1\'b5\'bd\'b4\'ef\'b5\'c4\'ca\'b1\'bc\'e4
+\f1 \cf0 \
+   						 [[\cf5 NSRunLoop\cf0  \cf4 currentRunLoop\cf0 ]\cf4 runMode\cf0 :\cf5 NSDefaultRunLoopMode\cf0  \cf4 beforeDate\cf0 :[\cf5 NSDate\cf0  \cf4 distantFuture\cf0 ]];  \
+			\}\
+
+\fs48 \cf9 \
+			3.4
+\f0 \'d6\'bb\'d3\'d0\'bd\'ab
+\f1 operation
+\f0 \'bc\'d3\'c8\'eb\'b5\'bd\'cf\'df\'b3\'cc\'b3\'d8
+\f1 ,
+\f0 \'b7\'bd\'bf\'c9\'d4\'cb\'d0\'d0
+\f1 \
+			
+\fs36 \cf5 NSOperationQueue\cf0  *queue = [[\cf5 NSOperationQueue\cf0  \cf4 alloc\cf0 ]\cf4 init\cf0 ];\
+    		queue.\cf5 maxConcurrentOperationCount\cf0  =\cf6 2\cf0 ;\
+			\cf2 //
+\f0 \'bd\'ab
+\f1 operation
+\f0 \'cc\'ed\'bc\'d3\'bd\'f8\'cf\'df\'b3\'cc\'b3\'d8
+\f1 ,operation
+\f0 \'cc\'ed\'bc\'d3\'bd\'f8\'cf\'df\'b3\'cc\'b3\'d8
+\f1 ,
+\f0 \'c1\'a2\'bf\'cc\'bf\'aa\'ca\'bc\'d4\'cb\'d0\'d0
+\f1 \cf0 \
+   			 [queue \cf4 addOperation\cf0 :operation1];\
+   		 	 [queue \cf4 addOperation\cf0 :operation2];\
+   			 [queue \cf4 addOperation\cf0 :operation3];
+\fs48 \cf9 \
+				
+\f0\fs72 \cf0 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0 \'cb\'c4.GCD\
+	
+\fs48 4.1GCD\'d6\'d6\'c0\'e0
+\fs72 \
+	
+\f1\fs36 \cf2 \CocoaLigature0 /
+\f0 \'b5\'da\'d2\'bb\'d6\'d6
+\f1 ,
+\f0 \'c8\'a1\'b5\'c3\'d6\'f7\'cf\'df\'b3\'cc
+\f1 :ios
+\f0 \'d7\'d4\'b4\'f8
+\f1 \cf0 \
+\pard\tx400\pardeftab400\pardirnatural
+\cf0     \cf8 _mainQueue\cf0  = \cf4 dispatch_get_main_queue\cf0 ();\
+    \
+    \cf2 //
+\f0 \'b5\'da\'b6\'fe\'d6\'d6
+\f1 ,
+\f0 \'c8\'a1\'b5\'c3\'c8\'ab\'be\'d6\'b5\'c4\'d2\'bb\'b8\'f6\'cf\'df\'b3\'cc
+\f1 :ios
+\f0 \'d7\'d4\'b4\'f8
+\f1 \cf0 \
+    \cf8 _globalQueue\cf0  = \cf4 dispatch_get_global_queue\cf0 (\cf10 DISPATCH_QUEUE_PRIORITY_DEFAULT\cf0 , \cf6 0\cf0 );\
+    \
+    \cf2 //
+\f0 \'b5\'da\'c8\'fd\'d6\'d6
+\f1 GCD
+\f0 \'b6\'e0\'cf\'df\'b3\'cc
+\f1 ,
+\f0 \'d3\'c3\'bb\'a7\'d7\'d4\'bc\'ba\'b4\'b4\'bd\'a8\'b5\'c4\'cf\'df\'b3\'cc\
+	
+\f1 //
+\f0 \'b5\'da\'d2\'bb\'b8\'f6\'b2\'ce\'ca\'fd
+\f1 :myQueue   
+\f0 \'ca\'c7\'d2\'bb\'b8\'f6\'d7\'d6\'b7\'fb\'b4\'ae
+\f1 ,
+\f0 \'d7\'f7\'b1\'ea\'ca\'b6
+\f1 \cf0 \
+    \cf2 //
+\f0 \'b5\'da\'b6\'fe\'b8\'f6\'b2\'ce\'ca\'fd
+\f1 :
+\f0 \'d5\'e2\'b8\'f6
+\f1 GCD
+\f0 \'b6\'d3\'c1\'d0\'ca\'c7\'b4\'ae\'d0\'d0\'bb\'b9\'ca\'c7\'b2\'a2\'d0\'d0
+\f1 \cf0 \
+    \cf2 //DISPATCH_QUEUE_SERIAL  
+\f0 \'b4\'ae\'d0\'d0
+\f1 \cf0 \
+    \cf2 //DISPATCH_QUEUE_CONCURRENT  
+\f0 \'b2\'a2\'d0\'d0
+\f1 \cf0 \
+    \cf2 //
+\f0 \'b4\'ae\'d0\'d0
+\f1   
+\f0 \'be\'cd\'ca\'c7\'b6\'d3\'c1\'d0\'c0\'ef\'c3\'e6
+\f1 ,
+\f0 \'b0\'a4\'b8\'f6\'d6\'b4\'d0\'d0
+\f1 .
+\f0 \'cf\'c8\'c0\'b4\'b5\'c4\'cf\'c8\'d6\'b4\'d0\'d0
+\f1 \cf0 \
+    \cf2 //
+\f0 \'b2\'a2\'d0\'d0
+\f1   
+\f0 \'d2\'bb\'c6\'f0\'c9\'cf
+\f1 \cf0 \
+    \cf8 _userQueue\cf0  = \cf4 dispatch_queue_create\cf0 (\cf7 "myQueue"\cf0 , \cf10 DISPATCH_QUEUE_SERIAL\cf0 );\
+\
+	
+\fs48 4.2 GCD
+\f0 \'b5\'f7\'b6\'c8\'b7\'bd\'ca\'bd
+\f1\fs36 \
+	\cf2 //
+\f0 \'cd\'ac\'b2\'bd\'b7\'bd\'ca\'bd\'bd\'f8\'d0\'d0\'b5\'f7\'d3\'c3
+\f1 ==
+\f0 \'b4\'ae\'d0\'d0
+\f1 \cf0 \
+\pard\tx400\pardeftab400\pardirnatural
+\cf2     \cf0 dispatch_sync(<#dispatch_queue_t queue#>, <#^(void)block#>)\
+    \cf2 //
+\f0 \'d2\'ec\'b2\'bd\'b7\'bd\'ca\'bd\'bd\'f8\'d0\'d0\'b5\'f7\'d3\'c3
+\f1 ==
+\f0 \'b2\'a2\'d0\'d0
+\f1 \cf0 \
+\cf2     \cf0 dispatch_async(<#dispatch_queue_t queue#>, <#^(void)block#>)\
+\
+	\cf2 //    _mainQueue  
+\f0 \'b2\'bb\'b9\'dc\'c4\'e3\'d3\'c3\'ba\'ce\'d6\'d6\'b7\'bd\'ca\'bd\'c8\'a5\'b5\'f7\'b6\'c8\'cb\'fc
+\f1 ,
+\f0 \'cb\'fc\'b6\'bc\'ca\'c7\'b4\'ae\'d0\'d0
+\f1 \cf0 \
+    \cf2 //
+\f0 \'d6\'f7\'cf\'df\'b3\'cc\'b2\'bb\'d2\'aa\'ca\'b9\'d3\'c3\'cd\'ac\'b2\'bd\'b5\'c4\'b7\'bd\'ca\'bd\'bd\'f8\'d0\'d0\'b5\'f7\'b6\'c8
+\f1 ,
+\f0 \'bb\'e1\'d7\'e8\'c8\'fb
+\f1 UI\cf0 \
+	\cf4 dispatch_async\cf0 (\cf8 _mainQueue\cf0 , ^\{\
+        \cf4 NSLog\cf0 (\cf7 @"1"\cf0 );\
+    \});\
+    \cf4 dispatch_async\cf0 (\cf8 _mainQueue\cf0 , ^\{\
+        \cf4 NSLog\cf0 (\cf7 @"2"\cf0 );\
+    \});\
+\
+	\cf2 //_globalQueue 
+\f0 \'c8\'ab\'be\'d6\'b6\'d3\'c1\'d0
+\f1 \cf0 \
+    \cf2 //
+\f0 \'c8\'e7\'b9\'fb\'ca\'b9\'d3\'c3
+\f1 dispatch_sync  
+\f0 \'cd\'ac\'b2\'bd\'b7\'bd\'ca\'bd\'c8\'a5\'b5\'f7\'b6\'c8
+\f1 ,
+\f0 \'be\'cd\'ca\'c7\'b4\'ae\'d0\'d0
+\f1 \cf0 \
+    \cf2 //
+\f0 \'c8\'e7\'b9\'fb\'ca\'b9\'d3\'c3
+\f1 dispatch_async 
+\f0 \'d2\'ec\'b2\'bd\'b7\'bd\'ca\'bd\'bd\'f8\'d0\'d0\'b5\'f7\'b6\'c8
+\f1 ,
+\f0 \'be\'cd\'ca\'c7\'b2\'a2\'d0\'d0
+\f1 \cf0 \
+    \cf4 dispatch_sync\cf0 (\cf8 _globalQueue\cf0 , ^\{\
+        \cf4 NSLog\cf0 (\cf7 @"A"\cf0 );\
+    \});\
+    \cf4 dispatch_sync\cf0 (\cf8 _globalQueue\cf0 , ^\{\
+        \cf4 NSLog\cf0 (\cf7 @"B"\cf0 );\
+    \});\
+\
+	\cf2 //
+\f0 \'d3\'c3\'bb\'a7\'d7\'d4\'bc\'ba\'b4\'b4\'bd\'a8\'b5\'c4\'b6\'d3\'c1\'d0
+\f1 \cf0 \
+    \cf2 //
+\f0 \'d3\'c3\'bb\'a7\'d7\'d4\'bc\'ba\'b4\'b4\'bd\'a8\'b5\'c4\'b6\'d3\'c1\'d0
+\f1 ,
+\f0 \'d6\'bb\'d2\'aa\'ca\'c7\'d3\'c3\'cd\'ac\'b2\'bd\'b7\'bd\'ca\'bd\'bd\'f8\'d0\'d0\'b5\'f7\'b6\'c8
+\f1 (dispatch_sync),
+\f0 \'d4\'f2\'d2\'bb\'b6\'a8\'ca\'c7\'b4\'ae\'d0\'d0
+\f1 \cf0 \
+    \cf2 //
+\f0 \'d6\'bb\'d3\'d0\'d2\'ec\'b2\'bd\'b5\'f7\'d3\'c3
+\f1 (dispatch_async)+ DISPATCH_QUEUE_CONCURRENT(
+\f0 \'b2\'a2\'d0\'d0
+\f1 )
+\f0 \'b2\'c5\'ca\'c7\'b2\'a2\'d0\'d0\'b5\'f7\'d3\'c3
+\f1 \cf0 \
+    \cf4 dispatch_async\cf0 (\cf8 _userQueue\cf0 , ^\{\
+        \cf4 NSLog\cf0 (\cf7 @"a"\cf0 );\
+    \});\
+    \cf4 dispatch_async\cf0 (\cf8 _userQueue\cf0 , ^\{\
+        \cf4 NSLog\cf0 (\cf7 @"b"\cf0 );\
+    \});\
+\
+	
+\fs48 4.3 GCD
+\f0 \'cb\'a2
+\f1 UI
+\fs36 \cf11 \
+	\cf8 _progress\cf0  = [[\cf5 UIProgressView\cf0  \cf4 alloc\cf0 ]\cf4 initWithFrame\cf0 :\cf4 CGRectMake\cf0 (\cf6 50\cf0 , \cf6 100\cf0 , \cf6 200\cf0 , \cf6 30\cf0 )];\
+    \cf8 _progress\cf0 .\cf5 progress\cf0  = \cf6 0\cf0 ;\
+    [\cf3 self\cf0 .\cf5 view\cf0  \cf4 addSubview\cf0 :\cf8 _progress\cf0 ];\
+\
+	\cf4 dispatch_async\cf0 (\cf8 _globalQueue\cf0 , ^\{\
+        \cf3 for\cf0  ( \cf3 int\cf0  i = \cf6 1\cf0 ; i<\cf6 11\cf0 ; i++)\
+        \{\
+            \cf3 float\cf0  value = i*\cf6 0.1\cf0 ;\
+            [\cf5 NSThread\cf0  \cf4 sleepForTimeInterval\cf0 :\cf6 1.0\cf0 ];\
+            \cf4 dispatch_async\cf0 (\cf8 _mainQueue\cf0 , ^\{\
+                    [\cf8 _progress\cf0  \cf4 setProgress\cf0 :value \cf4 animated\cf0 :\cf3 YES\cf0 ];\
+            \});\
+        \}\
+    \});\
+\
+	
+\fs48 4.4 GCD
+\f0 \'b5\'a5\'c0\'fd
+\f1\fs36 \
+\cf2 	// GCD
+\f0 \'b5\'a5\'c0\'fd\'d0\'b4\'b7\'a8
+\f1 \cf0 \
+	+ (\cf3 id\cf0 )shareInstance\
+	\{\
+    		\cf3 static\cf0  \cf5 dispatch_once_t\cf0  onceToken;\
+    		\cf3 static\cf0  \cf8 ViewController\cf0  * ctl = \cf3 nil\cf0 ;\
+    		\cf10 dispatch_once\cf0 (&onceToken, ^\{\
+        	\cf2 // 
+\f0 \'b1\'a3\'d6\'a4\'cf\'c2\'c3\'e6\'b5\'c4\'b4\'fa\'c2\'eb\'d6\'bb\'bb\'e1\'d6\'b4\'d0\'d0\'d2\'bb\'b4\'ce
+\f1 \cf0 \
+        	ctl = [[\cf8 ViewController\cf0  \cf4 alloc\cf0 ] \cf4 init\cf0 ];\
+   			 \});\
+    		\cf3 return\cf0  ctl; \
+	\}	\
+\
+\pard\tx600\pardeftab600\pardirnatural
+
+\f0 \cf0 \'d7\'f7\'d2\'b5\'a3\'ba\'d2\'d4NSData\'b5\'c4\'cd\'ac\'b2\'bd\'c7\'eb\'c7\'f3\'ce\'aa\'bb\'f9\'b4\'a1\'a3\'ac\'cd\'a8\'b9\'fd\'b6\'e0\'cf\'df\'b3\'cc\'a3\'ac\'cd\'ea\'b3\'c9\'d2\'ec\'b2\'bd\'cf\'c2\'d4\'d8\'a3\'ac\'b2\'a2\'c7\'d2\'cb\'a2\'d0\'c2UI\'a3\'a8UIImage\'a3\'a9\
+\'bd\'d3\'bf\'da:   {\field{\*\fldinst{HYPERLINK "http://images.cnblogs.com/cnblogs_com/kenshincui/613474/o_14.jpg"}}{\fldrslt http://images.cnblogs.com/cnblogs_com/kenshincui/613474/o_0.jpg}}  \'b5\'bd o_14.jpg
+\fs48 \
+
+\fs36 \'bd\'a8\'d2\'e9:  \'bf\'c9\'d2\'d4\'b8\'f8
+\f1 UIImageView
+\f0 \'cc\'ed\'bc\'d3\'d2\'bb\'b8\'f6\'b7\'d6\'c0\'e0
+\f1 ,
+\f0 \'b7\'d6\'c0\'e0\'d6\'d0\'d3\'d0\'d2\'bb\'b8\'f6\'b7\'bd\'b7\'a8 
+\f1 - (\cf3 void\cf0 )setImageWithURL:(\cf5 NSURL\cf0  *)url; 
+\f0 \'d4\'da\'d5\'e2\'b8\'f6\'b7\'bd\'b7\'a8\'d6\'d0\'bd\'f8\'d0\'d0\'cd\'bc\'c6\'ac\'cf\'c2\'d4\'d8
+\f1 .
+\f0\fs48 \
+\
+}
