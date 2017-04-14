@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>习近平：不要滥用概念，搞出一大堆“新常态</string>
+		<key>thumbnail</key>
+		<string>习近平</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>国防部回应美军舰驶入永暑礁12海里：3军机当即升</string>
+		<key>thumbnail</key>
+		<string>国防部</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>媒体：嫖娼？猝死？人大雷某案真相都藏在细节里</string>
+		<key>thumbnail</key>
+		<string>媒体</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>报警居民：警察称执法记录仪开着</string>
+		<key>thumbnail</key>
+		<string>报警</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>沈梦晨曝夏日美照 脖子以下全是腿</string>
+		<key>type</key>
+		<string>slides</string>
+		<key>images</key>
+		<array>
+			<string>沈梦晨1</string>
+			<string>沈梦晨2</string>
+			<string>沈梦晨3</string>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>金正恩的新职务和父辈有什么不同？</string>
+		<key>thumbnail</key>
+		<string>金正恩</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>台北地铁杀人魔被枪决：法警开1枪 未断气又补1枪</string>
+		<key>thumbnail</key>
+		<string>台北地铁</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>媒体：8成在售智能摄像头可能直播你的生活现场</string>
+		<key>thumbnail</key>
+		<string>生活现场</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>“丢肾”事件终于有了结论：肾没丢，是萎缩了</string>
+		<key>thumbnail</key>
+		<string>丢肾</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>北美野牛正式成为美国国兽</string>
+		<key>type</key>
+		<string>sliders</string>
+		<key>images</key>
+		<array>
+			<string>野牛1</string>
+			<string>野牛2</string>
+			<string>野牛3</string>
+		</array>
+	</dict>
+</array>
+</plist>
