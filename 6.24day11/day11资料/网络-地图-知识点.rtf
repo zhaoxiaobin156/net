@@ -1,0 +1,127 @@
+{\rtf1\ansi\ansicpg936\cocoartf1404\cocoasubrtf460
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset134 STHeitiSC-Light;\f2\fnil\fcharset134 STSongti-SC-Light;
+\f3\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red103\green29\blue0;\red92\green38\blue153;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25280\viewh14500\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0  
+\fs94 \cf2 								=====
+\fs88 =========================\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-11180\pardirnatural\qc\partightenfactor0
+
+\f1\fs92 \cf2                 \'b5\'d8\'cd\'bc
+\f0 \
+
+\fs86 						     ===============================
+\fs24 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\fs44 \cf0 \'d6\'aa\'ca\'b6\'b5\'e3\
+	1.\CocoaLigature0 MKMapView\
+	2.\'b5\'d8\'c0\'ed\'b1\'e0\'c2\'eb\
+	3.\'d7\'d4\'b6\'a8\'d2\'e5\'b1\'ea\'d7\'a2\
+=========================\
+MKMapView\
+	 \'a3\'a8\'c9\'ee\'b4\'f3\'b5\'d8\'d6\'b7 22.533367, 113.935404\'a3\'a9\
+	    (\'ce\'f7\'c0\'f6\'b5\'d8\'d6\'b7 22.581200, 113.953007)  
+\f3\fs48 \
+
+\f2\fs44 \
+	1.\'b5\'d8\'cd\'bc\'cf\'d4\'ca\'be\'b5\'c4\'c7\'f8\'d3\'f2\
+\
+		1\'a3\'a9CLLocationCoordinate2D\
+			\'d7\'f7\'d3\'c3\'a3\'ba\'be\'ad\'ce\'b3\'b6\'c8\'bd\'e1\'b9\'b9\'cc\'e5\
+\
+		2\'a3\'a9MKCoordinateSpan\
+			\'d7\'f7\'d3\'c3\'a3\'ba\'be\'ab\'b6\'c8\'bd\'e1\'b9\'b9\'cc\'e5\
+\
+		3\'a3\'a9MKCoordinateRegion\
+			\'d7\'f7\'d3\'c3\'a3\'ba\'cf\'d4\'ca\'be\'b5\'c4\'c7\'f8\'d3\'f2\
+\
+	2.\'b6\'a8\'ce\'bb\
+\
+		 \'d7\'a2\'d2\'e2\'a3\'ba\'bd\'e2\'be\'f6IOS8.0\'ce\'de\'b7\'a8\'b6\'a8\'ce\'bb\'ce\'ca\'cc\'e2\
+\
+		1)\expnd0\expndtw0\kerning0
+\CocoaLigature1 \'d0\'e8\'d2\'aa\'d4\'daInfo.plist\'d6\'d0\'bc\'d3\'c8\'eb\'c1\'bd\'b8\'f6\'c8\'b1\'ca\'a1\'c3\'bb\'d3\'d0\'b5\'c4\'d7\'d6\'b6\'ceNSLocationAlwaysUsageDescription\'ba\'cdPrivacy - Location Usage Description\kerning1\expnd0\expndtw0 \CocoaLigature0 \
+		2)if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)\{\
+\pard\tx1155\pardeftab1155\pardirnatural\partightenfactor0
+\cf0     		 [_manager requestAlwaysAuthorization];\
+  		\}\
+	\'d7\'f7\'d3\'c3\'a3\'ba\'c9\'ea\'c7\'eb\'b6\'a8\'ce\'bb\'c8\'a8\'cf\'de\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+		1\'a3\'a9CLLocationManager\
+		\'d7\'f7\'d3\'c3\'a3\'ba\'b6\'a8\'ce\'bb\'c0\'e0\
+\
+		2\'a3\'a9startUpdatingLocation\
+		\'d7\'f7\'d3\'c3\'a3\'ba\'bf\'aa\'c6\'f4\'b6\'a8\'ce\'bb\'a3\'a8\'c4\'a3\'c4\'e2\'c6\'f7\'ce\'de\'d0\'a7\'a3\'ac\'d6\'bb\'c4\'dc\'b6\'a8\'ce\'bb\'cc\'d8\'ca\'e2\'b5\'d8\'b5\'e3\'a3\'a9\
+		CLLocation: \'b5\'d8\'c0\'ed\'ce\'bb\'d6\'c3\'b6\'d4\'cf\'f3;\
+\
+		3\'a3\'a9\'d7\'f1\'ca\'d8\'d0\'ad\'d2\'e9CLLocationManagerDelegate\
+\
+		4\'a3\'a9\'b4\'fa\'c0\'ed\'b7\'bd\'b7\'a8\
+			- (void)locationManager:(CLLocationManager *)manager\
+\pard\tx600\pardeftab600\pardirnatural\partightenfactor0
+\cf0 	 didUpdateLocations:(NSArray *)locations\
+		\'d7\'f7\'d3\'c3\'a3\'ba\'b6\'a8\'ce\'bb\'b3\'c9\'b9\'a6\
+\
+			- (void)locationManager:(CLLocationManager *)manager\
+	didFailWithError:(NSError *)error;\
+		\'d7\'f7\'d3\'c3\'a3\'ba\'b6\'a8\'ce\'bb\'ca\'a7\'b0\'dc\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 =========================\
+\'b5\'d8\'c0\'ed\'b1\'e0\'c2\'eb\
+	1.\'d5\'fd\'cf\'f2\'b1\'e0\'c2\'eb \'b5\'d8\'c3\'fb-->\'be\'ad\'ce\'b3\'b6\'c8\
+	- (void)geocodeAddressString:(NSString *)addressString completionHandler:(CLGeocodeCompletionHandler)completionHandler;\
+\
+	2.\'b7\'b4\'cf\'f2\'b1\'e0\'c2\'eb \'be\'ad\'ce\'b3\'b6\'c8-->\'b5\'d8\'c3\'fb\'a3\'a8\'c9\'ee\'b4\'f3\'b5\'d8\'d6\'b7113.935404, 22.533367\'a3\'a9\
+	- (void)reverseGeocodeLocation:(CLLocation *)location completionHandler:(CLGeocodeCompletionHandler)completionHandler;\
+	CLGeocoder  \'b5\'d8\'c0\'ed\'b1\'e0\'c2\'eb\'b6\'d4\'cf\'f3\
+	CLPlacemark \'b2\'e9\'d1\'af\'bd\'e1\'b9\'fb\
+\
+	3.\'d7\'f8\'b1\'ea\'d7\'aa\'b1\'e4\'ce\'aa\'be\'ad\'ce\'b3\'b6\'c8\
+		- (CLLocationCoordinate2D)convertPoint:(CGPoint)point toCoordinateFromView:(UIView *)view;\
+\
+	4.\'b5\'d8\'cd\'bc\'b1\'ea\'d7\'a2\
+		MKPointAnnotation\
+\
+	5.\'cc\'ed\'bc\'d3\'b1\'ea\'d7\'a2\
+		- (void)addAnnotation:(id <MKAnnotation>)annotation;\
+=========================\
+\'d7\'d4\'b6\'a8\'d2\'e5\'b1\'ea\'d7\'a2\
+\
+	1.\'d7\'d4\'b6\'a8\'d2\'e5\'b1\'ea\'d7\'a2\'bf\'c9\'d2\'d4\'d1\'a1\'d4\'f1\'bc\'cc\'b3\'d0MKShape\'bb\'f2\'d5\'df\'d7\'f1\'ca\'d8MKAnnotation\'d0\'ad\'d2\'e9\
+	\
+	2.\'b4\'f3\'cd\'b7\'d5\'eb\'c0\'e0\'d0\'cd\
+		1\'a3\'a9MKPinAnnotationView\'cf\'b5\'cd\'b3\'b6\'a8\'d6\'c6\'ba\'c3\'b5\'c4\'b4\'f3\'cd\'b7\'d5\'eb\
+		2\'a3\'a9MKAnnotationView \'c3\'bb\'d3\'d0\'cd\'e2\'b9\'db\'a3\'ac\'d7\'d4\'b6\'a8\'d2\'e5\'b4\'f3\'cd\'b7\'d5\'eb\
+\
+	3. MKAnnotationView\
+		1\'a3\'a9image\
+		2\'a3\'a9canShowCallout\
+		3\'a3\'a9leftCalloutAccessoryView\'ba\'cdrightCalloutAccessoryView\
+\
+	\'b2\'e9\'d1\'af\'b6\'d4\'cf\'f3\
+	MKLocalSearchRequest\
+\pard\tx866\pardeftab866\pardirnatural\partightenfactor0
+
+\f3\fs36 \cf3 	
+\f2\fs44 \cf0 naturalLanguageQuery \'d0\'cb\'c8\'a4\'b5\'e3\
+\pard\tx1155\pardeftab1155\pardirnatural\partightenfactor0
+\cf0 	MKLocalSearch
+\f3\fs48 \cf3 	
+\f2\fs44 \cf0  \'cb\'d1\'cb\'f7\'c7\'eb\'c7\'f3\
+\pard\tx866\pardeftab866\pardirnatural\partightenfactor0
+\cf0 	MKMapItem \'d5\'d2\'b5\'bd\'cf\'ee\'c4\'bf	\
+\
+\
+
+\f3\fs36 \cf3 	
+\f2\fs44 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+}
