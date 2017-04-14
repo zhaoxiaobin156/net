@@ -1,0 +1,310 @@
+<tests>
+	<test expectedResults="1"><![CDATA[
+	Hello
+	]]>
+    </test>
+
+	<test expectedResults="2"><![CDATA[
+	Hello;World
+	]]>
+    </test>
+
+	<test expectedResults="2"><![CDATA[
+	Hello;World;
+	]]>
+    </test>
+
+	<test expectedResults="3"><![CDATA[
+	Hello;World;
+	CREATE abx AS $func$ BEGIN SELECT 'abc';
+	select 'def';
+	END GO $func$
+	]]>
+    </test>
+
+	<test expectedResults="4"><![CDATA[
+		Hello;
+		World;
+		CREATE abx AS $func$ BEGIN SELECT 'abc';
+		select 'def';
+		END GO $func$;
+		SELECT 'hello world'
+		]]>
+    </test>
+    
+    <test expectedResults="4"><![CDATA[
+        Hello;
+        World;
+        CREATE abx AS $func$ BEGIN SELECT 'abc';
+        select 'def';
+
+        -- $func$ ending tag in comment. Should not mess anything up.
+
+        select 'testing';
+        
+        END GO $func$;
+        SELECT 'hello world'
+    ]]>
+    </test>
+
+    <test expectedResults="1"><![CDATA[
+CREATE abx AS $func$
+BEGIN
+SELECT 'abc'; select 'def';
+END GO $func$
+    ]]></test>
+
+    <test expectedResults="2"><![CDATA[
+$$ ; this is a test $$; hello
+    ]]>
+    </test>
+
+    <test expectedResults="1"><![CDATA[
+CREATE PROCEDURE procedure1(IN Param1 VARCHAR(255))
+BEGIN
+  IF Param1 = 1 THEN
+    BEGIN
+      DECLARE i INT;
+      -- do something
+    END;
+  ELSE
+    BEGIN
+      DECLARE i INT;
+      -- do something
+    END;
+  END IF;
+END
+    ]]>
+	</test>
+
+<test expectedResults="3"><![CDATA[
+    select 'hello';
+    select 'world';
+    CREATE PROCEDURE procedure1(IN Param1 VARCHAR(255))
+    BEGIN
+    IF Param1 = 1 THEN
+    BEGIN
+    DECLARE i INT;
+    -- do something
+    END;
+    ELSE
+    BEGIN
+    DECLARE i INT;
+    -- do something
+    END;
+    END IF;
+    END
+]]>
+</test>
+
+
+    <test expectedResults="2"><![CDATA[
+DELIMITER $$
+CREATE FUNCTION hello_world()
+RETURNS TEXT
+LANGUAGE SQL
+BEGIN
+RETURN 'Hello World';
+END;
+$$
+DELIMITER ;
+SELECT 'abc';
+    ]]></test>
+
+    <test expectedResults="2"><![CDATA[
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proj_attr`()
+BEGIN
+DECLARE proj_done, attribute_done BOOLEAN DEFAULT FALSE;
+declare attributeId int(11) default 0;
+declare  projectId int(11) default 0;
+DECLARE curProjects CURSOR FOR SELECT id FROM project order by id;
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET proj_done = TRUE;
+
+OPEN curProjects;
+cur_project_loop: LOOP
+FETCH FROM curProjects INTO projectId;
+
+IF proj_done THEN
+CLOSE curProjects;
+LEAVE cur_project_loop;
+END IF;
+
+BLOCK2: BEGIN
+DECLARE curAttribute CURSOR FOR SELECT id FROM attribute order by id;
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET attribute_done = TRUE;
+OPEN curAttribute;
+cur_attribute_loop: LOOP
+FETCH FROM curAttribute INTO attributeId;
+IF proj_done THEN
+set proj_done = false;
+CLOSE curAttribute;
+LEAVE cur_attribute_loop;
+END IF;
+insert into project_attribute_value(project_id, attribute_id)
+values(projectId, attributeId);
+END LOOP cur_attribute_loop;
+END BLOCK2;
+END LOOP cur_project_loop;
+
+
+END$$
+
+DELIMITER ;
+    ]]></test>
+
+	<test expectedResults="3"><![CDATA[
+DROP FUNCTION IF EXISTS looptest;
+DELIMITER $$
+CREATE FUNCTION looptest()
+  RETURNS INT READS SQL DATA
+BEGIN
+  DECLARE v_total INT;
+
+  SET v_total = 0;
+
+  count_loop: LOOP
+    SET v_total = v_total + 1;
+
+    IF v_total = 10 THEN
+      LEAVE count_loop;
+    END IF;
+    
+  END LOOP;
+
+  RETURN v_total;
+END;
+$$
+DELIMITER ;
+		]]></test>
+
+	<test expectedResults="3"><![CDATA[
+DROP FUNCTION IF EXISTS looptest;
+DELIMITER $$
+CREATE FUNCTION looptest()
+  RETURNS INT READS SQL DATA
+BEGIN
+  DECLARE v_total INT;
+  DECLARE v_counter INT;
+  DECLARE done INT DEFAULT FALSE;
+  DECLARE csr CURSOR FOR 
+    SELECT counter FROM items;
+  DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+  SET v_total = 0;
+  OPEN csr;
+  read_loop: LOOP
+    FETCH csr INTO v_counter;
+
+    IF done THEN
+      LEAVE read_loop;
+    END IF;
+
+    SET v_total = v_total + v_counter;
+  END LOOP;
+  CLOSE csr;
+
+  RETURN v_total;
+END;
+$$
+
+DELIMITER ;
+		]]></test>
+
+	<test expectedResults="2"><![CDATA[
+CREATE PROCEDURE `drop_all_tables`()
+BEGIN
+DECLARE _done INT DEFAULT FALSE;
+DECLARE _tableName VARCHAR(255);
+DECLARE _tableType VARCHAR(255);
+
+DECLARE _cursor CURSOR FOR
+SELECT table_name, IF(STRCMP(TABLE_TYPE,'VIEW'),'TABLE','VIEW')
+FROM information_schema.TABLES
+WHERE table_schema = SCHEMA();
+DECLARE CONTINUE HANDLER FOR NOT FOUND SET _done = TRUE;
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+OPEN _cursor;
+
+REPEAT FETCH _cursor INTO _tableName, _tableType;
+
+IF NOT _done THEN
+SET @stmt_sql = CONCAT('DROP ', _tableType,'`', _tableName, '`');
+PREPARE stmt1 FROM @stmt_sql;
+EXECUTE stmt1;
+DEALLOCATE PREPARE stmt1;
+END IF;
+
+UNTIL _done END REPEAT;
+
+CLOSE _cursor;
+SET FOREIGN_KEY_CHECKS = 1;
+END;
+
+call drop_all_tables();
+		]]></test>
+
+	<test expectedResults="4"><![CDATA[
+    DROP PROCEDURE IF EXISTS `CustOrdersOrders`;
+    
+    DELIMITER $$
+    
+    CREATE PROCEDURE `CustOrdersOrders`(in AtCustomerID varchar(5))
+    BEGIN
+    SELECT OrderID,
+    OrderDate,
+    RequiredDate,
+    ShippedDate
+    FROM Orders
+    WHERE CustomerID = AtCustomerID
+    ORDER BY OrderID;
+    
+    END $$
+    
+    DELIMITER ;
+    
+    # ---------------------------------------------------------------------- #
+    # Add Procedure "Employee Sales by Country"                              #
+    # ---------------------------------------------------------------------- #
+    
+    DROP PROCEDURE IF EXISTS `Employee Sales by Country`;
+    
+    DELIMITER $$
+		]]></test>
+
+	<test expectedResults="1"><![CDATA[
+DELIMITER ;
+
+# ---------------------------------------------------------------------- #
+# Add FUNCTION "DateOnly"                                                #
+# ---------------------------------------------------------------------- #
+
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS `DateOnly` $$
+    ]]></test>
+
+	<test expectedResults="3"><![CDATA[
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS `DateOnly` $$
+
+CREATE FUNCTION `DateOnly` (InDateTime datetime) RETURNS VARCHAR(10)
+BEGIN
+
+DECLARE MyOutput varchar(10);
+SET MyOutput = DATE_FORMAT(InDateTime,'%Y-%m-%d');
+
+RETURN MyOutput;
+
+END $$
+
+DELIMITER ;
+    ]]></test>
+
+	<test expectedResults="0"><![CDATA[
+		]]>
+	</test> <!-- Empty node should have zero results -->
+</tests>

@@ -1,0 +1,84 @@
+{\rtf1\ansi\ansicpg936\cocoartf1404\cocoasubrtf460
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset134 STHeitiSC-Light;\f2\fnil\fcharset134 STSongti-SC-Light;
+}
+{\colortbl;\red255\green255\blue255;\red103\green29\blue0;\red38\green38\blue38;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25080\viewh14120\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-11180\pardirnatural\qc\partightenfactor0
+
+\f0\fs94 \cf2 						    =====
+\fs88 =========================\
+
+\f1\fs92                   SQL\'d3\'ef\'d1\'d4\'ba\'cdFMDB 
+\f0 \
+
+\fs86 						    ===============================
+\f2\fs42 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\fs48 \cf0 \
+\'d6\'aa\'ca\'b6\'b5\'e3\
+	1.SQL\'d3\'ef\'d1\'d4\
+	2.FMDB\'ca\'b9\'d3\'c3\
+=============================\
+	IOS: \'b3\'d6\'be\'c3\'bb\'af\'b1\'be\'b5\'d8\'bb\'af\
+	1\'a1\'a2NSUSerDefault\
+	2\'a1\'a2\'b1\'a3\'b4\'e6\'ce\'c4\'bc\'fe plist\'ce\'c4\'bc\'fe\
+	3\'a1\'a2\'b9\'e9\'b5\'b5\
+\
+	3\'a1\'a2\'ca\'fd\'be\'dd\'bf\'e2  sqlite\'ca\'fd\'be\'dd\'bf\'e2\
+	 \
+\
+		sqlite\'c7\'e1\'c1\'bf\'bc\'b6\'b5\'c4\'ca\'fd\'be\'dd\'bf\'e2; \
+		\'b2\'d9\'d7\'f7\'ca\'fd\'be\'dd\'bf\'e2\'a3\'ac \'d0\'e8\'d2\'aa\'ca\'b9\'d3\'c3\'b5\'bdSQL\'d3\'ef\'d1\'d4; \
+\
+		\'d4\'f6\'c9\'be\'b2\'e9\'b8\'c4; \
+\
+SQL\'d3\'ef\'d1\'d4\
+1.\'ca\'b2\'c3\'b4\'ca\'c7SQL\
+	SQL\cf3 \expnd0\expndtw0\kerning0
+ \'d3\'ef\'be\'e4\'be\'cd\'ca\'c7\'b6\'d4\'ca\'fd\'be\'dd\'bf\'e2\'bd\'f8\'d0\'d0\'b2\'d9\'d7\'f7\'b5\'c4\'d2\'bb\'d6\'d6\'d3\'ef\'d1\'d4\cf0 \kerning1\expnd0\expndtw0 \
+2.sqlite\'ca\'fd\'be\'dd\'c0\'e0\'d0\'cd\
+	\cf3 \expnd0\expndtw0\kerning0
+SQLite\'a3\'ac\'ca\'c7\'d2\'bb\'bf\'ee\'c7\'e1\'d0\'cd\'b5\'c4\'ca\'fd\'be\'dd\'bf\'e2\cf0 \kerning1\expnd0\expndtw0 \
+  	http://www.cnblogs.com/kfqcome/archive/2011/06/27/2137000.html\
+3.SQL\'b2\'d9\'d7\'f7\
+     1)\'b4\'b4\'bd\'a8\'b1\'ed   create****\
+     2)\'b2\'e5\'c8\'eb\'bc\'c7\'c2\'bc      insert into****\
+     3)\'b8\'fc\'d0\'c2\'bc\'c7\'c2\'bc      updata******\
+     4)\'b2\'e9\'d1\'af\'bc\'c7\'c2\'bc     select******\
+     5)\'c9\'be\'b3\'fd\'bc\'c7\'c2\'bc    delect******  \
+     6)\'c9\'be\'b3\'fd\'b1\'ed       drop******\
+\
+=============================\
+FMDB\'ca\'b9\'d3\'c3\
+1.FMDB\'cc\'d8\'d0\'d4\
+2.\'ca\'b9\'d3\'c3FMDB\'b2\'d9\'d7\'f7\'ca\'fd\'be\'dd\'bf\'e2\
+     1)\'b4\'f2\'bf\'aa\'ca\'fd\'be\'dd\'bf\'e2\
+          - (instancetype)databaseWithPath:(NSString *)aPath;\
+	\'bf\'aa\'c6\'f4\'ca\'fd\'be\'dd\'bf\'e2\
+		open\
+     2)\'b9\'d8\'b1\'d5\'ca\'fd\'be\'dd\'bf\'e2\
+          - (BOOL) close;\
+     3)\'b1\'ed\'b4\'b4\'bd\'a8\
+          - (BOOL) executeUpdate:(NSString *)sql, ...;\
+     4)\'d4\'f6\'bc\'d3\'d2\'bb\'cc\'f5\'bc\'c7\'c2\'bc     \
+     5)\'c9\'be\'b3\'fd\'d2\'bb\'cc\'f5\'bc\'c7\'c2\'bc     \
+     6)\'d0\'de\'b8\'c4\'d2\'bb\'cc\'f5\'bc\'c7\'c2\'bc     \
+     7)\'b2\'e9\'d1\'af\'bc\'c7\'c2\'bc            \
+          - (FMResultSet *) executeQuery:(NSString *)sql, ...;     \
+          \'a2\'d9\'b1\'e9\'c0\'fa\'bd\'e1\'b9\'fb\
+               \'ca\'c7\'b7\'f1\'d3\'d0\'cf\'c2\'d2\'bb\'cc\'f5\'bc\'c7\'c2\'bc\
+               - (BOOL) next;\
+          \'a2\'da\'bb\'f1\'c8\'a1\'ca\'fd\'be\'dd\
+               - (int)[\'ca\'fd\'be\'dd\'c0\'e0\'d0\'cd]ForColumn:(NSString *)columnName;\
+               - (int)[\'ca\'fd\'be\'dd\'c0\'e0\'d0\'cd]ForColumnIndex:(int)\
+\
+=============================\
+\pard\pardeftab720\sl520\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \kerning1\expnd0\expndtw0 \
+}

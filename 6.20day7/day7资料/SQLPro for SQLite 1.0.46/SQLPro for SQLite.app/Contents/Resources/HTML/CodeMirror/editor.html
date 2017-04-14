@@ -1,0 +1,100 @@
+
+<!doctype html>
+<html>
+    <head>
+        <title>Editor</title>
+            <link rel="stylesheet" href="./lib/codemirror.css">
+            <link rel="stylesheet" href="./theme/default.css">
+            <link rel="stylesheet" href="./theme/neat.css">
+            <link rel="stylesheet" href="./theme/elegant.css">
+            <link rel="stylesheet" href="./theme/lesser-dark.css">
+            <link rel="stylesheet" href="./theme/night.css">
+            <link rel="stylesheet" href="./theme/cobalt.css">
+            <link rel="stylesheet" href="./theme/eclipse.css">
+
+            <script src="./lib/codemirror.js"></script>
+            <script src="./mode/javascript/javascript.js"></script>
+
+            <style type="text/css">
+                .CodeMirror-scroll {
+                    height: auto;
+                    overflow-y: hidden;
+                    overflow-x: auto;
+                    width: 100%
+                }
+                .CodeMirror {
+                    border: 1px solid black;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 9999;
+                    margin:
+                    0;
+                    padding:
+                    0;
+                    border:
+                    0px solid #BBBBBB;
+                    opacity:
+                    1;
+                }
+                </style>
+    </head>
+    <body>
+        <form><textarea id="code" name="code"><replaceMe/>
+</textarea></form>
+        <script>
+            var lastErrorLine = 0;
+            var editor = CodeMirror.fromTextArea(document.getElementById("code"),
+                                                 {
+                                                 lineNumbers: true,
+                                                 mode: "javascript",
+                                                 onChange: function(a,b,c){sendCommand('jsonChanged');},
+//                                                 theme: "lesser-dark"
+                                                 });
+
+            //  editor.setValue('test');  
+            function setCode(newCode)
+            {
+                editor.setValue(newCode);
+            }
+            
+            function getCode()
+            {
+                return editor.getValue();
+            } // End of getCode
+
+            function tidy()
+            {
+                setCode(JSON.stringify(getCode()));
+            }
+
+            function resize(width,height)
+            {
+            }
+
+            function sendCommand(command)
+            {
+                var commandFrame = document.getElementById('commandFrame');
+                commandFrame.src = 'http://localhost/command/' + command;
+            }
+
+            function clearErrorLine()
+            {
+                editor.clearMarker(lastErrorLine);
+            } // End of clearErrorLine
+            
+            function setErrorLine(lineNumber)
+            {
+                clearErrorLine();
+                editor.setMarker(lineNumber, "<span style=\"color: #900\">●</span> %N%");
+                lastErrorLine = lineNumber;
+            } // End of setErrorLine
+
+            </script>
+
+    <iframe id="commandFrame" style="visible: false; display: none;" visible="false" />
+    </body>
+</html>

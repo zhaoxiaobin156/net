@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+        <title>Preview Change</title>
+        <meta charset="utf-8"></meta>
+        <style>
+            html, body, div, span, applet, object, iframe,
+            h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+            a, abbr, acronym, address, big, cite, code,
+            del, dfn, em, img, ins, kbd, q, s, samp,
+            small, strike, strong, sub, sup, tt, var,
+            b, u, i, center,
+            dl, dt, dd, ol, ul, li,
+            fieldset, form, label, legend,
+            table, caption, tbody, tfoot, thead, tr, th, td,
+            article, aside, canvas, details, embed,
+            figure, figcaption, footer, header, hgroup,
+            menu, nav, output, ruby, section, summary,
+            time, mark, audio, video {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+            }
+            /* HTML5 display-role reset for older browsers */
+            article, aside, details, figcaption, figure,
+            footer, header, hgroup, menu, nav, section {
+                display: block;
+            }
+            body {
+                line-height: 1;
+            }
+            ol, ul {
+                list-style: none;
+            }
+            blockquote, q {
+                quotes: none;
+            }
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+
+            table tr:nth-child(odd) td
+            {
+                background-color: #fff; color: black;
+            }
+            table tr:nth-child(even) td
+            {
+                background-color: #eee; color: black;
+            }
+        </style>
+        <script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="json2.js"></script>
+        <script type="text/javascript" src="./diff_match_patch/javascript/diff_match_patch_uncompressed.js"></script>
+
+        <link rel="stylesheet" href="./CodeMirror/lib/codemirror.css">
+        <link rel="stylesheet" href="./CodeMirror/theme/neat.css">
+        <link rel="stylesheet" href="./CodeMirror/theme/elegant.css">
+        <link rel="stylesheet" href="./CodeMirror/theme/lesser-dark.css">
+        <link rel="stylesheet" href="./CodeMirror/theme/night.css">
+        <link rel="stylesheet" href="./CodeMirror/theme/cobalt.css">
+        <link rel="stylesheet" href="./CodeMirror/theme/eclipse.css">
+
+        <script src="./CodeMirror/lib/codemirror.js"></script>
+        <script src="./CodeMirror/mode/mysql/mysql.js"></script>
+            <style type="text/css">
+                .CodeMirror-scroll {
+                    height: 100%;
+                    overflow-y: auto;
+                    overflow-x: auto;
+                    width: 100%;
+                }
+                .CodeMirror {
+                    height: 100%;
+                    width: 100%;
+                }
+                .diff1 {
+                    background-color: rgb(238,192,192);
+                }
+                .diff2 {
+                    background-color: rgb(255,255,199);
+                }
+
+                html, body
+                {
+                    height: 100%;
+                }
+            </style>
+    </head>
+    <body>
+        <table style="width: 100%; height: 100%; border: 1px solid black; table-layout: fixed;">
+            <tr>
+                <td style="width: 50%;"><textarea id="code1" name="code" autocorrect="off" autocapitalize="off"><code1 /></textarea></td>
+                <td style="width: 10px; background-color: #ddd;">&nbsp;</td>
+                <td style="width: 50%;"><textarea id="code2" name="code2" autocorrect="off" autocapitalize="off"><code2 /></textarea></td>
+            </tr>
+        </table>
+        </div>
+        <script>
+            var editor1 = CodeMirror.fromTextArea(document.getElementById("code1"),
+                                                 {
+                                                 lineNumbers: true,
+                                                 mode: "mysql",
+                                                 readOnly: true
+                                                 });
+
+            var editor2 = CodeMirror.fromTextArea(document.getElementById("code2"),
+                                                 {
+                                                 lineNumbers: true,
+                                                 mode: "mysql",
+                                                 onChange: function(a,b,c){updateDifferences();},
+                                                 });
+
+            var marks = [];
+            function updateDifferences()
+            {
+                // clear any existing marks
+                marks.forEach(function(entry) {
+                  entry.clear();
+                });
+
+                // Clear existing highlights
+                var start;
+                var end;
+
+                var dmp = new diff_match_patch();
+                var diffs = dmp.diff_main(editor1.getValue(), editor2.getValue());
+                dmp.diff_cleanupSemantic(diffs);
+
+                var editor1index = 0;
+                var editor2index = 0;
+
+                // Loop through our diffs
+                for (var i = 0; i < diffs.length; i++)
+                {
+                    var diff   = diffs[i];
+                    var mode   = diff[0];
+                    var string = diff[1];
+                    var length = string.length;
+
+                    if(0 == mode)
+                    {
+                        editor1index += length;
+                        editor2index += length;
+                    }
+                    else if(1 == mode)
+                    {
+                        start = editor2.posFromIndex(editor2index);
+                        end   = editor2.posFromIndex(editor2index + length);
+                        
+                        marks.push(editor2.markText(start, end, 'diff2'));
+                        editor2index += length;
+                    }
+                    else if(-1 == mode)
+                    {
+                        start = editor1.posFromIndex(editor1index);
+                        end   = editor1.posFromIndex(editor1index + length);
+
+                        marks.push(editor1.markText(start, end, 'diff1'));
+                        editor1index += length;
+                    }
+                }
+            } // End of updateDifferences
+
+            function getCode()
+            {
+                return editor2.getValue();
+            } // End of getCode
+
+            // Update our differences
+            updateDifferences();
+        </script>
+    </body>
+</html>
